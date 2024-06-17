@@ -1,0 +1,36 @@
+.btn {
+    font-family: var(--font-karla);
+    font-size: var(--fs-16px);
+    font-weight: var(--fw-extra-bold);
+    text-transform: capitalize;
+    color: var(--color-black);
+
+    padding: var(--space-1rem) var(--space-2rem);
+    background-color: var(--color-yellow);
+    border: 0;
+    border-radius: var(--br-pill);
+
+    transition:
+        background-color 100ms,
+        color 100ms,
+        box-shadow 100ms;
+}
+
+.btn:hover {
+    color: var(--color-white);
+
+    background-color: var(--color-green);
+
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow:
+        0 0 0 var(--space-0-5rem) var(--color-green),
+        0 0 0 var(--space-1rem) var(--color-yellow);
+}
+
+.btn:active {
+    color: var(--color-black);
+}

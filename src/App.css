@@ -24,6 +24,7 @@
   --br-small: 6px;
   --br-pill: 500px;
 
+  --space-0-5rem: 0.5rem; /* 8px */
   --space-1rem: 1rem; /* 16px */
   --space-2rem: 2rem; /* 32px */
   --space-3rem: 3rem; /* 48px */

@@ -15,6 +15,30 @@ const imgs = {
   }
 };
 
+const btns = {
+  reserveATable: {
+    text: 'Reserve a table'
+  },
+  seeMenu: {
+    text: 'See menu'
+  },
+  next: {
+    text: '>'
+  },
+  prev: {
+    text: '<'
+  },
+  add: {
+    text: '+'
+  },
+  remove: {
+    text: '-'
+  },
+  submit: {
+    text: 'Reserve a table'
+  }
+};
+
 const infoCards = {
   hero: {
     card: {
@@ -33,7 +57,6 @@ const infoCards = {
     ps: {
       isShown: true,
       list: [
-        'A family owned restaurant specializing in Mediterranean cuisine, and providing summer vibes all year round.',
         'A family owned restaurant specializing in Mediterranean cuisine, and providing summer vibes all year round.'
       ],
       color: colors.white
@@ -43,6 +66,13 @@ const infoCards = {
       src: imgs.dog.src,
       alt: imgs.dog.alt
     },
+    btns: {
+      isShown: true,
+      list: [
+        { text: btns.seeMenu.text },
+        { text: btns.reserveATable.text }
+      ]
+    }
   },
   about: {
     card: {
@@ -73,6 +103,10 @@ const infoCards = {
       src: imgs.dog.src,
       alt: imgs.dog.alt
     },
+    btns: {
+      isShown: false,
+      list: []
+    }
   },
   cta: {
     card: {
@@ -100,6 +134,12 @@ const infoCards = {
       src: imgs.dog.src,
       alt: imgs.dog.alt
     },
+    btns: {
+      isShown: true,
+      list: [
+        { text: btns.reserveATable.text },
+      ]
+    }
   }
 }
 

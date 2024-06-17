@@ -66,6 +66,12 @@
     align-items: start;
 }
 
+.info-card .btns {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1rem);
+}
+
 .info-card .ps {
     gap: var(--space-1rem);
 }
