@@ -69,7 +69,7 @@
 .info-card .btns {
     display: flex;
     align-items: center;
-    gap: var(--space-1rem);
+    gap: var(--space-0-5rem);
 }
 
 .info-card .ps {
@@ -121,6 +121,12 @@
     /* layout */
     .info-card .sections {
         flex-direction: row;
+    }
+
+    .info-card .btns {
+        display: flex;
+        align-items: center;
+        gap: var(--space-1rem);
     }
 }
 

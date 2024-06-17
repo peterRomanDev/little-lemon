@@ -16,27 +16,13 @@ const imgs = {
 };
 
 const btns = {
-  reserveATable: {
-    text: 'Reserve a table'
-  },
-  seeMenu: {
-    text: 'See menu'
-  },
-  next: {
-    text: '>'
-  },
-  prev: {
-    text: '<'
-  },
-  add: {
-    text: '+'
-  },
-  remove: {
-    text: '-'
-  },
-  submit: {
-    text: 'Reserve a table'
-  }
+  reserveATable: { text: 'Reserve a table' },
+  seeMenu: { text: 'See menu' },
+  next: { text: '>' },
+  prev: { text: '<' },
+  add: { text: '+' },
+  remove: { text: '-' },
+  submit: { text: 'Reserve a table' }
 };
 
 const infoCards = {
