@@ -1,0 +1,147 @@
+/* Mobile */
+/* text */
+.info-card .h1 {
+    font-family: var(--font-markazi-text);
+    font-size: var(--fs-64px);
+    font-weight: var(--fw-medium);
+    text-align: left;
+    line-height: 0.75;
+}
+
+.info-card .h2 {
+    font-family: var(--font-markazi-text);
+    font-size: var(--fs-40px);
+    font-weight: var(--fw-regular);
+    text-align: left;
+    line-height: 1;
+}
+
+.info-card .p {
+    font-family: var(--font-karla);
+    font-size: var(--fs-16px);
+    font-weight: var(--fw-regular);
+    text-align: left;
+}
+
+/* sizes */
+.info-card .card {
+    padding: var(--space-3rem) var(--space-1rem);
+}
+
+.info-card .section {
+    width: 300px;
+}
+
+.info-card .img-frame {
+    /* size of the image frame */
+    width: 300px;
+    height: 300px;
+    border-radius: var(--br-pill);
+}
+
+.info-card .img {
+    /* size of the image in relation to the frame */
+    height: 100%;
+}
+
+/* layout */
+.info-card .sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2rem);
+}
+
+.info-card .section-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2rem);
+}
+
+.info-card .hs,
+.info-card .ps {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.info-card .ps {
+    gap: var(--space-1rem);
+}
+
+.info-card .img-frame {
+    overflow: hidden;
+
+    /* making sure the image is positioned within the frame */
+    position: relative;
+}
+
+.info-card .img {
+    /* position of the image within the frame */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+/* Tablet */
+@media (min-width: 768px) {
+    /* sizes */
+    .info-card .card {
+        padding: var(--space-3rem) var(--space-2rem);
+    }
+
+    .info-card .section {
+        width: 350px;
+    }
+    
+    .info-card .img-frame {
+        /* size of the image frame */
+        width: 350px;
+        height: 350px;
+        border-radius: var(--br-pill);
+    }
+    
+    .info-card .img {
+        /* size of the image in relation to the frame */
+        height: 100%;
+    }
+
+    /* layout */
+    .info-card .sections {
+        flex-direction: row;
+    }
+}
+
+
+
+
+
+/* Desktop */
+@media (min-width: 992px) {
+    /* sizes */
+    .info-card .card {
+        padding: var(--space-3rem);
+    }
+
+    .info-card .section {
+        width: 400px;
+    }
+    
+    .info-card .img-frame {
+        /* size of the image frame */
+        width: 400px;
+        height: 400px;
+        border-radius: var(--br-pill);
+    }
+
+    /* layout */
+    .info-card .sections {
+        gap: var(--space-9rem);
+    }
+}
