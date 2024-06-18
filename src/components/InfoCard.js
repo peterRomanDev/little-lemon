@@ -14,7 +14,7 @@ export default function InfoCard({ props }) {
                     {props.ps.isShown && props.ps.list.map(p => <p key={p} className={`p text-${props.ps.color}`}>{p}</p>)}
                 </div>
                 <div className="btns">
-                    {props.btns.isShown && props.btns.list.map(btn => <Btn props={btn} />)}
+                    {props.btns.isShown && props.btns.list.map(btn => <Btn key={btn.text} props={btn} />)}
                 </div>
             </div>
             <div className="section section-img">

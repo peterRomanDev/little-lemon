@@ -37,6 +37,9 @@
   --space-10rem: 10rem; /* 160px */
   --space-11rem: 11rem; /* 176px */
   --space-12rem: 12rem; /* 192px */
+  --space-15rem: 15rem; /* 240px */
+  --space-17rem: 17rem; /* 272px */
+  --space-20rem: 20rem; /* 320px */
 }
 
 /* CSS reset */

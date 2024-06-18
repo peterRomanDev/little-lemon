@@ -29,13 +29,13 @@
 }
 
 .info-card .section {
-    width: 300px;
+    width: 285px;
 }
 
 .info-card .img-frame {
     /* size of the image frame */
-    width: 300px;
-    height: 300px;
+    width: 285px;
+    height: 285px;
     border-radius: var(--br-pill);
 }
 

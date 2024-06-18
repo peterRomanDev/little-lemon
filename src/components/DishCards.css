@@ -1,0 +1,27 @@
+/* layout */
+.section-dish-cards {
+    overflow-x: scroll;
+}
+
+.section-dish-cards {
+    /* making sure that the cards don't resize when the window is resized */
+    display: flex;
+
+    /* enable horizontal scrolling */
+    overflow-x: auto;
+
+    /* hiding the scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+/* hiding the scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+.section-dish-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.dish-cards {
+    display: flex;
+    gap: var(--space-1rem);
+    transform: translate(var(--space-15rem));
+}

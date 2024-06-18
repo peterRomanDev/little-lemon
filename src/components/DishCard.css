@@ -1,0 +1,88 @@
+/* text */
+.dish-card .h3 {
+    font-family: var(--font-karla);
+    font-size: var(--fs-18px);
+    font-weight: var(--fw-bold);
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.dish-card .p {
+    font-family: var(--font-karla);
+    font-size: var(--fs-16px);
+    font-weight: var(--fw-regular);
+    text-align: left;
+}
+
+/* sizes */
+.dish-card {
+    width: 233px;
+    height: 500px;
+    padding: var(--space-1rem);
+    border-radius: var(--br-small);
+}
+
+.dish-card .img-frame {
+    /* size of the image frame */
+    width: 150px;
+    height: 150px;
+    border-radius: var(--br-pill);
+}
+
+.dish-card .img,
+.dish-card .img-veggie-cous-cous,
+.dish-card .img-pizza-margherita {
+    /* size of the image in relation to the frame */
+    height: 100%;
+}
+
+/* layout */
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dish-card .section-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2rem);
+}
+
+.dish-card .img-frame {
+    overflow: hidden;
+
+    /* making sure the image is positioned within the frame */
+    position: relative;
+}
+
+.dish-card .img {
+    /* position of the image within the frame */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dish-card .img-greek-salad {
+    transform: scale(1.5) translate(-40%, -15%);
+}
+
+.dish-card .img-veggie-cous-cous {
+    transform: scale(1.5) translate(-45%, 15%);
+}
+
+.dish-card .img-pizza-margherita {
+    transform: translate(-39%);
+}
+
+.dish-card .img-spaghetti-carbonara {
+    transform: translate(-55%);
+}
+
+.dish-card .section-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1rem);
+}

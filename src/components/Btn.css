@@ -17,8 +17,6 @@
 }
 
 .btn:hover {
-    color: var(--color-white);
-
     background-color: var(--color-green);
 
     cursor: pointer;
@@ -32,7 +30,7 @@
 }
 
 .btn:active {
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 

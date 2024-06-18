@@ -1,3 +1,14 @@
+// images
+import imgGreekSalad from '../images/dishes/greek-salad.jpg';
+import imgMoussaka from '../images/dishes/moussaka.jpg';
+import imgPizzaMargherita from '../images/dishes/pizza-margherita.jpg';
+import imgSpaghettiCarbonara from '../images/dishes/spaghetti-carbonara.jpg';
+import imgVeggieCousCous from '../images/dishes/veggie-cous-cous.jpg';
+import imgCrepeWithNutella from '../images/dishes/crepe-with-nutells.jpg';
+import imgChefs from '../images/other/chefs.jpg';
+
+// components
+import DishCards from "./DishCards";
 import InfoCard from "./InfoCard";
 
 const colors = {
@@ -9,11 +20,102 @@ const colors = {
 };
 
 const imgs = {
-  dog: {
-    src: 'https://images.unsplash.com/photo-1718301166305-421b59a63acf?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'A dog on the field on a gloomy day'
+  dishes: {
+    greekSalad: {
+      src: imgGreekSalad,
+      alt: 'Greek Salad'
+    },
+    moussaka: {
+      src: imgMoussaka,
+      alt: 'Moussaka'
+    },
+    pizzaMargherita: {
+      src: imgPizzaMargherita,
+      alt: 'Pizza Margherita'
+    },
+    spaghettiCarbonara: {
+      src: imgSpaghettiCarbonara,
+      alt: 'Spaghetti Carbonara'
+    },
+    veggieCousCous: {
+      src: imgVeggieCousCous,
+      alt: 'Veggie cous cous'
+    },
+    crepeWithNutella: {
+      src: imgCrepeWithNutella,
+      alt: 'Crepe with nutella'
+    },
+  },
+  other: {
+    chefs: {
+      src: imgChefs,
+      alt: 'Adrian and Francesco, the chefs of the Little Lemon restaurant'
+    }
   }
 };
+
+const dishes = [
+  {
+    id: 1,
+    img: {
+      src: imgs.dishes.greekSalad.src,
+      alt: imgs.dishes.greekSalad.alt
+    },
+    title: 'Greek Salad',
+    description: 'Savor the Mediterranean with our Greek Salad, featuring crisp romaine, juicy tomatoes, cucumbers, red onions, and Kalamata olives, topped with creamy feta and oregano, and drizzled with olive oil and red wine vinegar.',
+    price: 9.99
+  },
+  {
+    id: 2,
+    img: {
+      src: imgs.dishes.moussaka.src,
+      alt: imgs.dishes.moussaka.alt
+    },
+    title: 'Moussaka',
+    description: "Delight in layers of rich, savory flavor with our Moussaka. Succulent ground beef, tender eggplant, and creamy béchamel sauce are baked to perfection, creating a classic Greek dish that's hearty and satisfying.",
+    price: 25.99
+  },
+  {
+    id: 3,
+    img: {
+      src: imgs.dishes.pizzaMargherita.src,
+      alt: imgs.dishes.pizzaMargherita.alt
+    },
+    title: 'Pizza Margherita',
+    description: 'Enjoy the simplicity of our Pizza Margherita, featuring a crisp, thin crust topped with tangy tomato sauce, fresh mozzarella, and fragrant basil leaves. Baked to perfection, this classic Italian pizza offers a burst of fresh, vibrant flavors in every slice.',
+    price: 12.99
+  },
+  {
+    id: 4,
+    img: {
+      src: imgs.dishes.spaghettiCarbonara.src,
+      alt: imgs.dishes.spaghettiCarbonara.alt
+    },
+    title: 'Spaghetti Carbonara',
+    description: 'Indulge in the creamy, savory goodness of our Spaghetti Carbonara. Al dente spaghetti is tossed with crispy pancetta, rich egg yolk, and freshly grated Parmesan, finished with a touch of black pepper.',
+    price: 22.99
+  },
+  {
+    id: 5,
+    img: {
+      src: imgs.dishes.veggieCousCous.src,
+      alt: imgs.dishes.veggieCousCous.alt
+    },
+    title: 'Veggie cous cous',
+    description: 'Savor the wholesome flavors of our Couscous with Vegetables. Fluffy couscous is mixed with a colorful array of roasted seasonal vegetables, lightly seasoned with aromatic herbs and spices. A delightful, healthy, and satisfying dish.',
+    price: 19.99
+  },
+  {
+    id: 6,
+    img: {
+      src: imgs.dishes.crepeWithNutella.src,
+      alt: imgs.dishes.crepeWithNutella.alt
+    },
+    title: 'Crepe with nutella',
+    description: 'Indulge in the sweet delight of our Crepe with Nutella. A delicate, thin crepe is generously spread with creamy Nutella and folded to perfection. A simple yet irresistible treat that melts in your mouth.',
+    price: 9.99
+  }
+];
 
 const btns = {
   reserveATable: { text: 'Reserve a table' },
@@ -49,8 +151,8 @@ const infoCards = {
     },
     img: {
       isShown: true,
-      src: imgs.dog.src,
-      alt: imgs.dog.alt
+      src: imgs.dishes.greekSalad.src,
+      alt: imgs.dishes.greekSalad.alt
     },
     btns: {
       isShown: true,
@@ -86,8 +188,8 @@ const infoCards = {
     },
     img: {
       isShown: true,
-      src: imgs.dog.src,
-      alt: imgs.dog.alt
+      src: imgs.other.chefs.src,
+      alt: imgs.other.chefs.alt
     },
     btns: {
       isShown: false,
@@ -117,8 +219,8 @@ const infoCards = {
     },
     img: {
       isShown: true,
-      src: imgs.dog.src,
-      alt: imgs.dog.alt
+      src: imgs.dishes.veggieCousCous.src,
+      alt: imgs.dishes.veggieCousCous.alt
     },
     btns: {
       isShown: true,
@@ -130,10 +232,11 @@ const infoCards = {
 }
 
 export default function Main() {
-  
+
   return (
     <main>
       <InfoCard props={infoCards.hero} />
+      <DishCards props={dishes} />
       <InfoCard props={infoCards.about} />
       <InfoCard props={infoCards.cta} />
     </main>
