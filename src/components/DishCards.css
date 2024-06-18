@@ -15,8 +15,8 @@
     -ms-overflow-style: none;  /* For Internet Explorer and Edge */
 }
 
-/* hiding the scrollbar for WebKit browsers (Chrome, Safari, etc.) */
 .section-dish-cards::-webkit-scrollbar {
+    /* hiding the scrollbar for WebKit browsers (Chrome, Safari, etc.) */
     display: none;
 }
 

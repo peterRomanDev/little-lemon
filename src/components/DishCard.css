@@ -29,9 +29,7 @@
     border-radius: var(--br-pill);
 }
 
-.dish-card .img,
-.dish-card .img-veggie-cous-cous,
-.dish-card .img-pizza-margherita {
+.dish-card .img {
     /* size of the image in relation to the frame */
     height: 100%;
 }
@@ -66,18 +64,22 @@
 }
 
 .dish-card .img-greek-salad {
+    /* adjusting the position of the Greek Salad image */
     transform: scale(1.5) translate(-40%, -15%);
 }
 
 .dish-card .img-veggie-cous-cous {
+    /* adjusting the position of the Veggie Cous Cous image */
     transform: scale(1.5) translate(-45%, 15%);
 }
 
 .dish-card .img-pizza-margherita {
+    /* adjusting the position of the Pizza Margherita image */
     transform: translate(-39%);
 }
 
 .dish-card .img-spaghetti-carbonara {
+    /* adjusting the position of the Spaghetti Carbonara image */
     transform: translate(-55%);
 }
 

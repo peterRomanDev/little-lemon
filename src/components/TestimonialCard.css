@@ -1,0 +1,154 @@
+/* Mobile */
+/* text */
+.testimonial-card .h1 {
+    font-family: var(--font-markazi-text);
+    font-size: var(--fs-64px);
+    font-weight: var(--fw-medium);
+    text-align: left;
+    line-height: 0.75;
+}
+
+.testimonial-card .h3 {
+    font-family: var(--font-karla);
+    font-size: var(--fs-18px);
+    font-weight: var(--fw-bold);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.testimonial-card .p {
+    font-family: var(--font-karla);
+    font-size: var(--fs-16px);
+    font-weight: var(--fw-regular);
+    text-align: left;
+}
+
+/* sizes */
+.testimonial-card .card {
+    width: 285px;
+    height: 585px;
+    padding: var(--space-1rem);
+    border-radius: var(--br-small);
+}
+
+.testimonial-card .img-frame {
+    /* size of the image frame */
+    width: 150px;
+    height: 150px;
+    border-radius: var(--br-pill);
+}
+
+.testimonial-card .img {
+    /* size of the image in relation to the frame */
+    height: 100%;
+}
+
+.testimonial-card .section-top,
+.testimonial-card .section-bottom {
+    transition: opacity 150ms;
+}
+
+.testimonial-card .switching-content {
+    opacity: 0;
+}
+
+/* layout */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1rem);
+}
+
+.testimonial-card .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card .section-top,
+.testimonial-card .section-img-rating,
+.testimonial-card .section-author-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card .section-top {
+    gap: var(--space-2rem);
+}
+
+.testimonial-card .section-img-rating,
+.testimonial-card .section-author-info {
+    gap: var(--space-0-5rem);
+}
+
+.testimonial-card .img-frame {
+    overflow: hidden;
+
+    /* making sure the image is positioned within the frame */
+    position: relative;
+}
+
+.testimonial-card .img {
+    /* position of the image within the frame */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonial-card .img-john-smith {
+    /* adjusting the position of the John Smith image */
+    transform: translate(-60%);
+}
+
+.testimonial-card .img-jane-peterson {
+    /* adjusting the position of the Jane Peterson image */
+    transform: scale(1.3) translate(-38%, 5%);
+}
+
+.testimonial-card .btns-sm {
+    /* making certain buttons appear on small screens */
+    display: flex;
+    gap: var(--space-1rem);
+}
+
+.testimonial-card .btn-md {
+    /* making certain buttons disappear on small screens */
+    display: none;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    /* sizes */
+    .testimonial-card .card {
+        width: 509px;
+        height: 550px;
+        padding: var(--space-3rem);
+    }
+
+    /* layout */
+    .testimonial-card {
+        flex-direction: row;
+    }
+
+    .testimonial-card .btns-sm {
+        /* making certain buttons disappear on larger screens */
+        display: none;
+    }
+
+    .testimonial-card .btn-md {
+        /* making certain buttons appear on larger screens */
+        display: block;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    /* sizes */
+    .testimonial-card .card {
+        width: 813px;
+        height: 500px;
+    }
+}

@@ -6,10 +6,14 @@ import imgSpaghettiCarbonara from '../images/dishes/spaghetti-carbonara.jpg';
 import imgVeggieCousCous from '../images/dishes/veggie-cous-cous.jpg';
 import imgCrepeWithNutella from '../images/dishes/crepe-with-nutells.jpg';
 import imgChefs from '../images/other/chefs.jpg';
+import imgJohnSmith from '../images/other/John-Smith.jpg';
+import imgWojakMleczko from '../images/other/Wojak-Mleczko.jpg';
+import imgJanePeterson from '../images/other/Jane-Peterson.jpg';
 
 // components
 import DishCards from "./DishCards";
 import InfoCard from "./InfoCard";
+import TestimonialCard from './TestimonialCard';
 
 const colors = {
   black: 'black',
@@ -50,6 +54,18 @@ const imgs = {
     chefs: {
       src: imgChefs,
       alt: 'Adrian and Francesco, the chefs of the Little Lemon restaurant'
+    },
+    johnSmith: {
+      src: imgJohnSmith,
+      alt: 'John Smith'
+    },
+    wojakMleczko: {
+      src: imgWojakMleczko,
+      alt: 'Wojak Mleczko'
+    },
+    janePeterson: {
+      src: imgJanePeterson,
+      alt: 'Jane Peterson'
     }
   }
 };
@@ -115,6 +131,42 @@ const dishes = [
     description: 'Indulge in the sweet delight of our Crepe with Nutella. A delicate, thin crepe is generously spread with creamy Nutella and folded to perfection. A simple yet irresistible treat that melts in your mouth.',
     price: 9.99
   }
+];
+
+const testimonials = [
+  {
+    id: 1,
+    img: {
+      src: imgs.other.johnSmith.src,
+      alt: imgs.other.johnSmith.alt
+    },
+    rating: 10,
+    review: 'Little Lemon is a hidden gem that captures the essence of Mediterranean cuisine. The flavors are fresh and vibrant, from the perfectly grilled seafood to the authentic Greek salads. The warm, inviting atmosphere and attentive service make every visit a delightful experience. Highly recommend for anyone seeking a taste of the Mediterranean!',
+    author: 'John Smith',
+    jobTitle: 'Mediterranean cuisine connoisseur'
+  },
+  {
+    id: 2,
+    img: {
+      src: imgs.other.wojakMleczko.src,
+      alt: imgs.other.wojakMleczko.alt
+    },
+    rating: 9,
+    review: 'Nestled in the heart of downtown, Little Lemon offers a delightful escape into the vibrant flavors of the Mediterranean. From the moment you step inside, the warm and inviting ambiance, complemented by rustic décor and the tantalizing aroma of freshly prepared dishes, sets the stage for a memorable dining experience.',
+    author: 'Wojak Mleczko',
+    jobTitle: 'Michelin star chef'
+  },
+  {
+    id: 3,
+    img: {
+      src: imgs.other.janePeterson.src,
+      alt: imgs.other.janePeterson.alt
+    },
+    rating: 10,
+    review: 'Little Lemon is a gem in the city, offering an authentic Mediterranean dining experience. The cozy ambiance and flavorful dishes make it a must-visit. With attentive service and a delightful menu, Little Lemon promises a memorable meal every time.',
+    author: 'Jane Peterson',
+    jobTitle: 'Author of "Taste of Chicago"'
+  },
 ];
 
 const btns = {
@@ -238,6 +290,7 @@ export default function Main() {
       <InfoCard props={infoCards.hero} />
       <DishCards props={dishes} />
       <InfoCard props={infoCards.about} />
+      <TestimonialCard props={testimonials} />
       <InfoCard props={infoCards.cta} />
     </main>
   );
