@@ -1,0 +1,32 @@
+/* Mobile */
+/* text */
+.section-frame > .h2 {
+    font-family: var(--font-karla);
+    font-size: var(--fs-20px);
+    font-weight: var(--fw-extra-bold);
+    text-transform: uppercase;
+}
+
+/* sizes */
+.section-frame {
+    padding: var(--space-2rem) 0;
+}
+
+/* layout */
+.section-frame {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1rem);
+}
+
+.section-frame .section-content-centered {
+    align-self: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    /* sizes */
+    .section-frame {
+        padding: var(--space-4rem) 0;
+    }
+}

@@ -14,6 +14,7 @@ import imgJanePeterson from '../images/other/Jane-Peterson.jpg';
 import DishCards from "./DishCards";
 import InfoCard from "./InfoCard";
 import TestimonialCard from './TestimonialCard';
+import Section from './Section';
 
 const colors = {
   black: 'black',
@@ -179,8 +180,46 @@ const btns = {
   submit: { text: 'Reserve a table' }
 };
 
+const sections = {
+  heroLandingPage: {
+    h2: {
+      isShown: false,
+      text: '',
+      color: ''
+    }
+  },
+  menu: {
+    h2: {
+      isShown: true,
+      text: 'Our menu',
+      color: colors.black
+    }
+  },
+  about: {
+    h2: {
+      isShown: true,
+      text: 'Who we are',
+      color: colors.black
+    }
+  },
+  testimonials: {
+    h2: {
+      isShown: true,
+      text: 'Testimonials',
+      color: colors.black
+    }
+  },
+  cta: {
+    h2: {
+      isShown: true,
+      text: 'Join our oasis of taste',
+      color: colors.black
+    }
+  },
+};
+
 const infoCards = {
-  hero: {
+  heroLandingPage: {
     card: {
       bgColor: colors.green
     },
@@ -287,11 +326,21 @@ export default function Main() {
 
   return (
     <main>
-      <InfoCard props={infoCards.hero} />
-      <DishCards props={dishes} />
-      <InfoCard props={infoCards.about} />
-      <TestimonialCard props={testimonials} />
-      <InfoCard props={infoCards.cta} />
+      <Section sectionProps={sections.heroLandingPage}>
+        <InfoCard props={infoCards.heroLandingPage} />
+      </Section>
+      <Section sectionProps={sections.menu}>
+        <DishCards props={dishes} />
+      </Section>
+      <Section sectionProps={sections.about}>
+        <InfoCard props={infoCards.about} />
+      </Section>
+      <Section sectionProps={sections.testimonials}>
+        <TestimonialCard props={testimonials} />
+      </Section>
+      <Section sectionProps={sections.cta}>
+        <InfoCard props={infoCards.cta} />
+      </Section>
     </main>
   );
 }

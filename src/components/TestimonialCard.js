@@ -41,7 +41,7 @@ export default function TestimonialCard({ props }) {
   };
 
   return (
-    <div className="testimonial-card">
+    <div className="testimonial-card section-content-centered">
       {/* button that appears next to the testimonial card on larger screen sizes */}
       <div className="btn-md">
         <Btn props={btns.prev} handleClick={e => handleClick(e)} />

@@ -1,3 +1,8 @@
+/* sizes */
+.dish-cards {
+    padding: 0 var(--space-10rem);
+}
+
 /* layout */
 .section-dish-cards {
     overflow-x: scroll;
@@ -23,5 +28,5 @@
 .dish-cards {
     display: flex;
     gap: var(--space-1rem);
-    transform: translate(var(--space-15rem));
+    /* transform: translate(var(--space-15rem)); */
 }
