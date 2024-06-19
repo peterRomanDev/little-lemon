@@ -1,0 +1,35 @@
+/* sizes */
+.header .list {
+    list-style: none;
+}
+
+.header .a {
+    font-family: var(--font-karla);
+    font-size: var(--fs-16px);
+    font-weight: var(--fw-extra-bold);
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--color-black);
+    border-radius: var(--br-pill);
+
+    transition:
+        color 100ms,
+        box-shadow 100ms
+}
+
+.header .a:focus {
+    outline: 0;
+    box-shadow:
+        0 0 0 var(--space-0-5rem) var(--color-white),
+        0 0 0 var(--space-1rem) var(--color-green);
+}
+
+.header .a:active {
+    color: var(--color-yellow);
+}
+
+/* layout */
+.header .list {
+    display: flex;
+    gap: var(--space-2rem);
+}

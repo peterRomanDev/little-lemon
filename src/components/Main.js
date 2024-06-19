@@ -12,20 +12,20 @@ export default function Main() {
 
   return (
     <main>
-      <Section section={sections.heroLandingPage}>
-        <InfoCard infoCard={infoCards.heroLandingPage} />
+      <Section section={sections && sections.heroLandingPage}>
+        <InfoCard infoCard={infoCards && infoCards.heroLandingPage} />
       </Section>
-      <Section section={sections.menu}>
+      <Section section={sections && sections.menu}>
         <DishCards />
       </Section>
-      <Section section={sections.about}>
-        <InfoCard infoCard={infoCards.about} />
+      <Section section={sections && sections.about}>
+        <InfoCard infoCard={infoCards && infoCards.about} />
       </Section>
-      <Section section={sections.testimonials}>
+      <Section section={sections && sections.testimonials}>
         <TestimonialCard />
       </Section>
-      <Section section={sections.cta}>
-        <InfoCard infoCard={infoCards.cta} />
+      <Section section={sections && sections.cta}>
+        <InfoCard infoCard={infoCards && infoCards.cta} />
       </Section>
     </main>
   );

@@ -419,6 +419,22 @@ const infoCards = {
   },
 };
 
+// header details
+const headerDets = {
+    imgs: {
+        logo: {
+            src: imgs.brandAssets.logo1.src,
+            alt: imgs.brandAssets.logo1.alt
+        }
+    },
+    links: [
+        { title: links.home.title, href: links.home.href },
+        { title: links.menu.title, href: links.menu.href },
+        { title: links.about.title, href: links.about.href },
+        { title: links.reservation.title, href: links.reservation.href }
+    ]
+};
+
 // footer details
 const footerDets = {
   img: {
@@ -452,7 +468,7 @@ const footerDets = {
 
 export function PageContentProvider({ children }) {
     return (
-        <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, footerDets }}>
+        <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, headerDets, footerDets }}>
             {children}
         </PageContentContext.Provider>
     );

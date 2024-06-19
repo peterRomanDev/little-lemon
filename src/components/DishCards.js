@@ -13,7 +13,7 @@ export default function DishCards() {
   return (
     <div className="section-dish-cards">
         <div className="dish-cards">
-            {dishes.map(dish => <DishCard key={dish.id} dish={dish} />)}
+            {dishes && dishes.map(dish => <DishCard key={dish.id} dish={dish} />)}
         </div>
     </div>
   );

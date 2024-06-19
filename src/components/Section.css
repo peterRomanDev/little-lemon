@@ -27,6 +27,6 @@
 @media (min-width: 768px) {
     /* sizes */
     .section-frame {
-        padding: var(--space-4rem) 0;
+        padding: var(--space-10rem) 0 var(--space-2rem) 0;
     }
 }

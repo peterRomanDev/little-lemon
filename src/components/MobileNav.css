@@ -1,0 +1,50 @@
+.mobile-nav .btn-menu-icon {
+    width: var(--space-3rem);
+    height: var(--space-3rem);
+    padding: var(--space-1rem);
+    border-radius: var(--br-pill);
+    border: 0;
+
+    transition:
+        color 100ms,
+        background-color 100ms;
+}
+
+.mobile-nav .btn-menu-icon:hover {
+    background-color: var(--color-green);
+
+    cursor: pointer;
+}
+
+.mobile-nav .btn-menu-icon:active {
+    color: var(--color-yellow);
+}
+
+.mobile-nav .li {
+    width: var(--space-10rem);
+    padding: var(--space-1rem);
+}
+
+/* layout */
+.mobile-nav .btn-menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav {
+    position: relative;
+}
+
+.mobile-nav .nav {
+    position: absolute;
+    top: var(--space-4rem);
+    right: 0;
+}
+
+.mobile-nav .list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+}

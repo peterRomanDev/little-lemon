@@ -1,11 +1,12 @@
-export default function Nav() {
+// style
+import './Nav.css';
+
+export default function Nav({ links }) {
+
   return (
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Reserve a table</a></li>
+      <ul className="list">
+        {links && links.map(link => <li key={link.title}><a href={link.href} className="a">{link.title}</a></li>)}
       </ul>
     </nav>
   );
