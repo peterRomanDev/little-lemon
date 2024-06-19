@@ -1,25 +1,25 @@
 import Btn from './Btn';
 import './InfoCard.css';
 
-export default function InfoCard({ props }) {
+export default function InfoCard({ infoCard }) {
   return (
     <div className="info-card">
-        <div className={`card bg-${props.card.bgColor} sections`}>
+        <div className={`card bg-${infoCard.card.bgColor} sections`}>
             <div className="section section-text">
                 <div className="hs">
-                    {props.h1.isShown && <h1 className={`h1 text-${props.h1.color}`}>{props.h1.text}</h1>}
-                    {props.h2.isShown && <h2 className={`h2 text-${props.h2.color}`}>{props.h2.text}</h2>}
+                    {infoCard.h1.isShown && <h1 className={`h1 text-${infoCard.h1.color}`}>{infoCard.h1.text}</h1>}
+                    {infoCard.h2.isShown && <h2 className={`h2 text-${infoCard.h2.color}`}>{infoCard.h2.text}</h2>}
                 </div>
                 <div className="ps">
-                    {props.ps.isShown && props.ps.list.map(p => <p key={p} className={`p text-${props.ps.color}`}>{p}</p>)}
+                    {infoCard.ps.isShown && infoCard.ps.list.map(p => <p key={p} className={`p text-${infoCard.ps.color}`}>{p}</p>)}
                 </div>
                 <div className="btns">
-                    {props.btns.isShown && props.btns.list.map(btn => <Btn key={btn.text} props={btn} />)}
+                    {infoCard.btns.isShown && infoCard.btns.list.map(btn => <Btn key={btn.text} btn={btn} />)}
                 </div>
             </div>
             <div className="section section-img">
                 <div className="img-frame">
-                    {props.img.isShown && <img className="img" src={props.img.src} alt={props.img.alt} />}
+                    {infoCard.img.isShown && <img className="img" src={infoCard.img.src} alt={infoCard.img.alt} />}
                 </div>
             </div>
         </div>

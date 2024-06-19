@@ -1,14 +1,19 @@
+// hooks
+import { usePageContent } from '../hooks/usePageContent';
+
 // components
 import DishCard from './DishCard';
 
 // style
 import './DishCards.css';
 
-export default function DishCards({ props }) {
+export default function DishCards() {
+  const { dishes } = usePageContent();
+
   return (
     <div className="section-dish-cards">
         <div className="dish-cards">
-            {props.map(dish => <DishCard key={dish.id} props={dish} />)}
+            {dishes.map(dish => <DishCard key={dish.id} dish={dish} />)}
         </div>
     </div>
   );

@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// context
+import { PageContentProvider } from './context/PageContentContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <PageContentProvider>
+      <App />
+    </PageContentProvider>
   </React.StrictMode>
 );
 

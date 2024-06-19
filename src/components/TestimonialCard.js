@@ -1,30 +1,28 @@
 // style
-import { useState } from 'react';
-import Btn from './Btn';
 import './TestimonialCard.css';
 
-export default function TestimonialCard({ props }) {
-  const [testimonial, setTestimonial] = useState(props[0]);
+// hooks
+import { useState } from 'react';
+import { usePageContent } from '../hooks/usePageContent';
+
+// components
+import Btn from './Btn';
+
+export default function TestimonialCard() {
+  const { btns, testimonials } = usePageContent();
+  
+  const [testimonial, setTestimonial] = useState(testimonials[0]);
   const [isSwitching, setIsSwitching] = useState(false);
 
-  const btns = {
-    reserveATable: { text: 'Reserve a table' },
-    seeMenu: { text: 'See menu' },
-    next: { text: '>' },
-    prev: { text: '<' },
-    add: { text: '+' },
-    remove: { text: '-' },
-    submit: { text: 'Reserve a table' }
-  };
 
   // switching testimonials
   const handleClick = e => {
     // the previous testimonial is the index of the current testimonial - 1
     // when the index is 0, the previous testimonial is the last one from the array of testimonials
-    const prevTestimonial = props.indexOf(testimonial) === 0 ? props[props.length - 1] : props[props.indexOf(testimonial) - 1];
+    const prevTestimonial = testimonials.indexOf(testimonial) === 0 ? testimonials[testimonials.length - 1] : testimonials[testimonials.indexOf(testimonial) - 1];
     // the next testimonial is the index of the current testimonial + 1
     // when the index is the same as the index of the last testimonial, the next testimonial is the first one from the array of testimonials
-    const nextTestinomial = props.indexOf(testimonial) === props.length - 1 ? props[0] : props[props.indexOf(testimonial) + 1];
+    const nextTestinomial = testimonials.indexOf(testimonial) === testimonials.length - 1 ? testimonials[0] : testimonials[testimonials.indexOf(testimonial) + 1];
 
     if (e.target.textContent === btns.prev.text) {
       // when the "<" button is clicked, previous testimonial is displayed
@@ -44,7 +42,7 @@ export default function TestimonialCard({ props }) {
     <div className="testimonial-card section-content-centered">
       {/* button that appears next to the testimonial card on larger screen sizes */}
       <div className="btn-md">
-        <Btn props={btns.prev} handleClick={e => handleClick(e)} />
+        <Btn btn={btns.prev} handleClick={e => handleClick(e)} />
       </div>
       <div className="card bg-green">
         <div className={`section-top ${isSwitching ? "switching-content" : ""}`}>
@@ -73,12 +71,12 @@ export default function TestimonialCard({ props }) {
       </div>
       {/* button that appears next to the testimonial card on larger screen sizes */}
       <div className="btn-md">
-        <Btn props={btns.next} handleClick={e => handleClick(e)} />
+        <Btn btn={btns.next} handleClick={e => handleClick(e)} />
       </div>
       {/* buttons that appear below the testimonial card on small screen sizes */}
       <div className="btns-sm">
-          <Btn props={btns.prev} handleClick={e => handleClick(e)} />
-          <Btn props={btns.next} handleClick={e => handleClick(e)} />
+          <Btn btn={btns.prev} handleClick={e => handleClick(e)} />
+          <Btn btn={btns.next} handleClick={e => handleClick(e)} />
       </div>
     </div>
   );

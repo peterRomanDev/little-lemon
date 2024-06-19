@@ -1,9 +1,9 @@
 import './Btn.css';
 
-export default function Btn({ props, handleClick }) {
+export default function Btn({ btn, handleClick }) {
   return (
     <button className="btn" onClick={handleClick}>
-        {props.text}
+        {btn && btn.text}
     </button>
   );
 }
