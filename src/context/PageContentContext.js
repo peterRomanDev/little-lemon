@@ -289,15 +289,17 @@ const infoCards = {
     card: {
       bgColor: colors.green
     },
-    h1: {
-      isShown: true,
-      text: 'Little Lemon',
-      color: colors.yellow
-      },
-    h2: {
-      isShown: true,
-      text: 'Chicago',
-      color: colors.black
+    hs: {
+        h1: {
+            isShown: true,
+            text: 'Little Lemon',
+            color: colors.yellow
+        },
+        h2: {
+            isShown: true,
+            text: 'Chicago',
+            color: colors.black
+        },
     },
     ps: {
       isShown: true,
@@ -323,15 +325,18 @@ const infoCards = {
     card: {
       bgColor: colors.yellow
     },
-    h1: {
-      isShown: false,
-      text: '',
-      color: colors.yellow
-      },
-    h2: {
-      isShown: false,
-      text: '',
-      color: colors.black
+    hs: {
+        isShown: true,
+        h1: {
+            isShown: false,
+            text: '',
+            color: colors.yellow
+        },
+        h2: {
+            isShown: false,
+            text: '',
+            color: colors.black
+        }
     },
     ps: {
       isShown: true,
@@ -357,15 +362,18 @@ const infoCards = {
     card: {
       bgColor: colors.green
     },
-    h1: {
-      isShown: false,
-      text: '',
-      color: colors.yellow
-      },
-    h2: {
-      isShown: false,
-      text: '',
-      color: colors.black
+    hs: {
+        isShown: true,
+        h1: {
+            isShown: false,
+            text: '',
+            color: colors.yellow
+        },
+        h2: {
+            isShown: false,
+            text: '',
+            color: colors.black
+        },
     },
     ps: {
       isShown: true,
@@ -390,20 +398,23 @@ const infoCards = {
     card: {
       bgColor: colors.green
     },
-    h1: {
-      isShown: true,
-      text: 'Reserve a table',
-      color: colors.yellow
-      },
-    h2: {
-      isShown: false,
-      text: '',
-      color: colors.black
+    hs: {
+        isShown: true,
+        h1: {
+            isShown: true,
+            text: 'Reserve a table',
+            color: colors.yellow
+        },
+        h2: {
+            isShown: false,
+            text: '',
+            color: colors.black
+        }
     },
     ps: {
       isShown: true,
       list: [
-        'Secure your spot out our lovely restaurant by filling out the form below. You will get an email confirmation once the form is filled.'
+        'Secure your spot out our lovely restaurant by filling out the form below. You will get a confirmation once the form is filled.'
       ],
       color: colors.white
     },

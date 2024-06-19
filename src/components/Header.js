@@ -37,7 +37,7 @@ export default function Header() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [screenWidth]);
+  }, [screenWidth, isOpen, isSmallScreen]);
 
   return (
     <header className="header bg-white">

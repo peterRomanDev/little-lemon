@@ -1,5 +1,5 @@
 // hooks
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // style
 import './MobileNav.css';

@@ -33,6 +33,13 @@
     color: var(--color-yellow);
 }
 
+.btn:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-green);
+
+    cursor: default;
+}
+
 
 
 
