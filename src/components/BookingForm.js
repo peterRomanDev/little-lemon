@@ -4,9 +4,7 @@ import { useState } from 'react';
 // style
 import './BookingForm.css';
 
-export default function BookingForm() {
-    const [availableTimes, setAvailableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']);
-
+export default function BookingForm({ availableTimes, updateTimes }) {
     const [formData, setFormData] = useState({
         date: '',
         time: '18:00',
@@ -21,7 +19,7 @@ export default function BookingForm() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(formData)
+        updateTimes({ type: 'TIME' });
     };
 
   return (
