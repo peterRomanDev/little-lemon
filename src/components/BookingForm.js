@@ -4,7 +4,7 @@ import { useState } from 'react';
 // style
 import './BookingForm.css';
 
-export default function BookingForm({ availableTimes, updateTimes }) {
+export default function BookingForm({ availableTimes, dispatch }) {
     const [formData, setFormData] = useState({
         date: '',
         time: '18:00',
@@ -15,11 +15,14 @@ export default function BookingForm({ availableTimes, updateTimes }) {
     const handleChange = e => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+
+        if (name === 'date') {
+            dispatch({ type: 'UPDATE_TIMES', date: value });
+        }
     };
 
     const handleSubmit = e => {
         e.preventDefault();
-        updateTimes({ type: 'TIME' });
     };
 
   return (
@@ -28,7 +31,7 @@ export default function BookingForm({ availableTimes, updateTimes }) {
         style={{ display: 'grid', gap: '20px' }}
         onSubmit={e => handleSubmit(e)}
     >
-        <label htmlFor="res-date" className="label">Choose date*</label>
+        <label data-testid="my-test-id" htmlFor="res-date" className="label">Choose date*</label>
         <input
             type="date"
             id="res-date"
