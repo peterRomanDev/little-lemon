@@ -9,7 +9,7 @@
 
 /* sizes */
 .section-frame {
-    padding: var(--space-2rem) 0;
+    padding: var(--space-6rem) 0;
 }
 
 /* layout */
@@ -27,6 +27,6 @@
 @media (min-width: 768px) {
     /* sizes */
     .section-frame {
-        padding: var(--space-5rem) 0;
+        padding: var(--space-7rem) 0 var(--space-3rem);
     }
 }

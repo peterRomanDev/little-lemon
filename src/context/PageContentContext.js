@@ -207,25 +207,26 @@ const testimonials = [
 const links = {
   home: {
     title: 'Home',
-    href: '#home'
-  },
-  about: {
-    title: 'About',
-    href: '#about'
+    href: '/#home'
   },
   menu: {
     title: 'Menu',
-    href: '#menu'
+    href: '/#menu'
   },
-  reservation: {
+  about: {
+    title: 'About',
+    href: '/#about'
+  },
+  booking: {
     title: 'Reserve a table',
-    href: '#reservation'
+    href: '/booking'
   }
 };
 
 // sections
 const sections = {
   heroLandingPage: {
+    id: 'home',
     h2: {
       isShown: false,
       text: '',
@@ -233,6 +234,7 @@ const sections = {
     }
   },
   menu: {
+    id: 'menu',
     h2: {
       isShown: true,
       text: 'Our menu',
@@ -240,6 +242,7 @@ const sections = {
     }
   },
   about: {
+    id: 'about',
     h2: {
       isShown: true,
       text: 'Who we are',
@@ -247,6 +250,7 @@ const sections = {
     }
   },
   testimonials: {
+    id: 'testimonials',
     h2: {
       isShown: true,
       text: 'Testimonials',
@@ -254,6 +258,7 @@ const sections = {
     }
   },
   cta: {
+    id: 'reserve-a-table',
     h2: {
       isShown: true,
       text: 'Join our oasis of taste',
@@ -261,6 +266,7 @@ const sections = {
     }
   },
   heroReservationPage: {
+    id: 'booking',
     h2: {
       isShown: false,
       text: '',
@@ -268,6 +274,7 @@ const sections = {
     }
   },
   reservation: {
+    id: 'booking-form',
     h2: {
       isShown: true,
       text: 'Booking information',
@@ -275,6 +282,7 @@ const sections = {
     }
   },
   reservationSuccess: {
+    id: 'booking-success',
     h2: {
       isShown: true,
       text: 'You have successfully booked a table',
@@ -290,6 +298,7 @@ const infoCards = {
       bgColor: colors.green
     },
     hs: {
+        isShown: true,
         h1: {
             isShown: true,
             text: 'Little Lemon',
@@ -313,11 +322,11 @@ const infoCards = {
       src: imgs.dishes.greekSalad.src,
       alt: imgs.dishes.greekSalad.alt
     },
-    btns: {
+    links: {
       isShown: true,
       list: [
-        { text: btns.seeMenu.text },
-        { text: btns.reservation.text }
+        { title: btns.seeMenu.text, href: links.menu.href },
+        { title: btns.reservation.text, href: links.booking.href }
       ]
     }
   },
@@ -353,7 +362,7 @@ const infoCards = {
       src: imgs.other.chefs.src,
       alt: imgs.other.chefs.alt
     },
-    btns: {
+    links: {
       isShown: false,
       list: []
     }
@@ -387,10 +396,10 @@ const infoCards = {
       src: imgs.dishes.veggieCousCous.src,
       alt: imgs.dishes.veggieCousCous.alt
     },
-    btns: {
+    links: {
       isShown: true,
       list: [
-        { text: btns.reservation.text },
+        { title: btns.reservation.text, href: links.booking.href },
       ]
     }
   },
@@ -423,7 +432,7 @@ const infoCards = {
       src: imgs.dishes.pizzaMargherita.src,
       alt: imgs.dishes.pizzaMargherita.alt
     },
-    btns: {
+    links: {
       isShown: false,
       list: []
     }
@@ -432,18 +441,18 @@ const infoCards = {
 
 // header details
 const headerDets = {
-    imgs: {
-        logo: {
-            src: imgs.brandAssets.logo1.src,
-            alt: imgs.brandAssets.logo1.alt
-        }
-    },
-    links: [
-        { title: links.home.title, href: links.home.href },
-        { title: links.menu.title, href: links.menu.href },
-        { title: links.about.title, href: links.about.href },
-        { title: links.reservation.title, href: links.reservation.href }
-    ]
+  imgs: {
+      logo: {
+          src: imgs.brandAssets.logo1.src,
+          alt: imgs.brandAssets.logo1.alt
+      }
+  },
+  links: [
+      { title: links.home.title, href: links.home.href },
+      { title: links.menu.title, href: links.menu.href },
+      { title: links.about.title, href: links.about.href },
+      { title: links.booking.title, href: links.booking.href }
+  ]
 };
 
 // footer details
@@ -458,7 +467,7 @@ const footerDets = {
       links: [
         { title: links.menu.title, href: links.menu.href },
         { title: links.about.title, href: links.about.href },
-        { title: links.reservation.title, href: links.reservation.href }
+        { title: links.booking.title, href: links.booking.href }
       ]
     },
     {

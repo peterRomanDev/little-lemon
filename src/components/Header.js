@@ -1,6 +1,7 @@
 // components
 import Nav from './Nav';
 import MobileNav from './MobileNav';
+import { Link } from 'react-router-dom';
 
 // hooks
 import { useEffect, useState } from 'react';
@@ -44,13 +45,13 @@ export default function Header() {
       {/* a dark background covers the whole screen when the menu icon is clicked and disappears when it is clicked again */}
       {isOpen && <div role="button" className="bg-dark" onClick={handleBackdropClick}></div>}
       <div className="img-frame">
-        <a className="a logo" href={links && links.home.href}>
+        <Link className="a logo" to={links && links.home.href}>
           <img
             className="img"
             src={headerDets && headerDets.imgs.logo.src}
             alt={headerDets && headerDets.imgs.logo.alt}
           />
-        </a>
+        </Link>
       </div>
       {/* display a hamburger menu icon and a dropdown navigation if the width of the window is less than 768px (Mobile) */}
       {/* display regular navigation if the width of the window is at least 768px (Tablet or Desktop) */}

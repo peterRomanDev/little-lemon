@@ -3,6 +3,7 @@
     font-size: var(--fs-16px);
     font-weight: var(--fw-extra-bold);
     text-transform: capitalize;
+    text-decoration: none;
     color: var(--color-black);
 
     padding: 0.65em 1.15em;

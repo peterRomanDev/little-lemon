@@ -28,7 +28,6 @@ export default function BookingForm() {
     <form
         className="booking-form section-content-centered"
         style={{ display: 'grid', gap: '20px' }}
-        // style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}
         onSubmit={e => handleSubmit(e)}
     >
         <label htmlFor="res-date" className="label">Choose date*</label>
@@ -49,12 +48,6 @@ export default function BookingForm() {
             value={formData.time}
         >
             {availableTimes && availableTimes.map(availableTime => <option key={availableTime} className="option">{availableTime}</option>)}
-            {/* <option>17:00</option>
-            <option>18:00</option>
-            <option>19:00</option>
-            <option>20:00</option>
-            <option>21:00</option>
-            <option>22:00</option> */}
         </select>
         <label htmlFor="guests" className="label">Number of guests*</label>
         <input

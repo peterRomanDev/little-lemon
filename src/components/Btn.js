@@ -1,3 +1,4 @@
+// style
 import './Btn.css';
 
 export default function Btn({ btn, handleClick }) {

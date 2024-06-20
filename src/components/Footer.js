@@ -4,6 +4,9 @@ import './Footer.css';
 // hooks
 import { usePageContent } from "../hooks/usePageContent";
 
+// components
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   const { footerDets } = usePageContent();
 
@@ -30,7 +33,7 @@ function Column({ col }) {
       {col && col.links && (
         <nav>
           <ul className="list">
-            {col.links.map(link => <li key={link.href}><a href={link.href} className="a text-green">{link.title}</a></li>)}
+            {col.links.map(link => <li key={link.href}><Link to={link.href} className="a text-green">{link.title}</Link></li>)}
           </ul>
         </nav>
       )}

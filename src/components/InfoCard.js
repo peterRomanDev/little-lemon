@@ -1,4 +1,7 @@
-import Btn from './Btn';
+// components
+import { Link } from 'react-router-dom';
+
+// style
 import './InfoCard.css';
 
 export default function InfoCard({ infoCard }) {
@@ -17,9 +20,9 @@ export default function InfoCard({ infoCard }) {
                         {infoCard.ps.list.map(p => <p key={p} className={`p text-${infoCard.ps.color}`}>{p}</p>)}
                     </div>
                 )}
-                {infoCard && infoCard.btns.isShown && (
+                {infoCard && infoCard.links.isShown && (
                     <div className="btns">
-                        {infoCard.btns.list.map(btn => <Btn key={btn.text} btn={btn} />)}
+                        {infoCard.links.list.map(link => <Link className="btn" key={link.title} to={link.href}>{link.title}</Link>)}
                     </div>
                 )}
             </div>

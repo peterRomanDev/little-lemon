@@ -1,4 +1,7 @@
 // style
+import { Link } from 'react-router-dom';
+
+// style
 import './Nav.css';
 
 export default function Nav({ links }) {
@@ -6,7 +9,7 @@ export default function Nav({ links }) {
   return (
     <nav>
       <ul className="list">
-        {links && links.map(link => <li key={link.title}><a href={link.href} className="a">{link.title}</a></li>)}
+        {links && links.map(link => <li key={link.title}><Link to={link.href} className="a">{link.title}</Link></li>)}
       </ul>
     </nav>
   );
