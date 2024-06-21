@@ -1,11 +1,10 @@
 // hooks
 import { useState } from 'react';
-import { usePageContent } from '../hooks/usePageContent';
 
 // style
 import './BookingForm.css';
 
-export default function BookingForm({ availableTimes, dispatch }) {
+export default function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [formData, setFormData] = useState({
         date: '',
         time: '18:00',
@@ -22,18 +21,16 @@ export default function BookingForm({ availableTimes, dispatch }) {
         }
     };
 
-    const handleSubmit = e => {
-        e.preventDefault();
-    };
-
   return (
     <form
         className="booking-form section-content-centered"
         style={{ display: 'grid', gap: '20px' }}
-        onSubmit={e => handleSubmit(e)}
+        onSubmit={() => submitForm(formData)}
     >
         <label data-testid="my-test-id" htmlFor="res-date" className="label">Choose date*</label>
         <input
+            data-testid="test-input"
+            required
             type="date"
             id="res-date"
             name="date"
@@ -43,6 +40,7 @@ export default function BookingForm({ availableTimes, dispatch }) {
         />
         <label htmlFor="res-time" className="label">Choose time*</label>
         <select
+            required
             id="res-time"
             name="time"
             className="select"
@@ -53,6 +51,7 @@ export default function BookingForm({ availableTimes, dispatch }) {
         </select>
         <label htmlFor="guests" className="label">Number of guests*</label>
         <input
+            required
             type="number"
             placeholder="1"
             min="1"
@@ -63,8 +62,9 @@ export default function BookingForm({ availableTimes, dispatch }) {
             onChange={e => handleChange(e)}
             value={formData.guests}
         />
-        <label htmlFor="occasion" className="label">Occasion</label>
+        <label htmlFor="occasion" className="label">Occasion*</label>
         <select
+            required
             id="occasion"
             name="occasion"
             className="select"

@@ -9,7 +9,10 @@ import BookingForm from "../components/BookingForm";
 // hooks
 import { usePageContent } from '../hooks/usePageContent';
 import useScrollToSection from "../hooks/useScrollTo";
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
+
+const today = new Date();
 
 const seededRandom = function (seed) {
     var m = 2**35 - 31;
@@ -35,14 +38,17 @@ const fetchAPI = function(date) {
     return result;
 };
 
-const today = new Date();
+const submitAPI = function(formData) {
+    return true;
+};
 
-export const initializeTimes = date => fetchAPI(date);
+export const initializeTimes = () => fetchAPI(today);
 
 export const updateTimes = date => fetchAPI(date);
 
 const availableTimes = (state, action) => {
     const { type, date } = action;
+    console.log(date, state);
 
     switch (type) {
         case 'UPDATE_TIMES':
@@ -54,6 +60,18 @@ const availableTimes = (state, action) => {
 
 export default function BookingPage() {
     const { sections, infoCards } = usePageContent();
+    const navigate = useNavigate();
+
+    const submitForm = formData => {
+        const setLocalStorage = data => localStorage.setItem('Form data', data);
+        const getLocalStorage = data => localStorage.getItem('Form data');
+        const deleteLocalStorage = data => localStorage.removeItem('Form data');
+
+        if (submitAPI(formData)) {
+            navigate('/booking-confirmed');
+            setLocalStorage(formData);
+        };
+    };
 
     const [state, dispatch] = useReducer(availableTimes, initializeTimes(today));
 
@@ -67,7 +85,7 @@ export default function BookingPage() {
                     <InfoCard infoCard={infoCards && infoCards.heroReservationPage} />
                 </Section>
                 <Section>
-                    <BookingForm availableTimes={state} dispatch={dispatch} />
+                    <BookingForm availableTimes={state} dispatch={dispatch} submitForm={submitForm} />
                 </Section>
             </Main>
             <Footer />

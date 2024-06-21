@@ -38,7 +38,7 @@
     background-color: var(--color-gray);
     color: var(--color-green);
 
-    cursor: default;
+    cursor: not-allowed;
 }
 
 
