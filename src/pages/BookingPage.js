@@ -9,7 +9,7 @@ import BookingForm from "../components/BookingForm";
 // hooks
 import { usePageContent } from '../hooks/usePageContent';
 import useScrollToSection from "../hooks/useScrollTo";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const today = new Date();
@@ -63,8 +63,48 @@ const availableTimes = (state, action) => {
     }
 };
 
+// const validate = () => {
+//     let errors = {};
+
+//     if (!values.name.trim()) {
+//       errors.name = 'Name is required';
+//     }
+
+//     if (!values.email) {
+//       errors.email = 'Email is required';
+//     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+//       errors.email = 'Email address is invalid';
+//     }
+
+//     if (!values.password) {
+//       errors.password = 'Password is required';
+//     } else if (values.password.length < 6) {
+//       errors.password = 'Password needs to be 6 characters or more';
+//     }
+
+//     if () {
+//         errors.date = 'You need to choose a date. Required field.';
+//     }
+
+//     if () {
+//         errors.time = 'There is an error with the time field.';
+//     }
+
+//     if () {
+//         errors.guests = 'There is an error with the guests field.';
+//     }
+
+//     if () {
+//         errors.occasion = 'There is an error with the occasion field.';
+//     }
+
+//     return errors;
+// };
+
 export default function BookingPage() {
     // a page with the table booking form
+
+    // const [errors, setErrors] = useState({});
 
     const { sections, infoCards } = usePageContent();
 
@@ -72,10 +112,12 @@ export default function BookingPage() {
     const navigate = useNavigate();
 
     // a function to handle form submitting
-    const submitForm = formData => {
+    const submitForm = (e, formData) => {
         const setLocalStorage = data => localStorage.setItem('Form data', data);
         const getLocalStorage = data => localStorage.getItem('Form data');
         const deleteLocalStorage = data => localStorage.removeItem('Form data');
+
+        e.preventDefault();
 
         if (submitAPI(formData)) {
             // navigate to ConfirmedBooking.js
@@ -84,6 +126,15 @@ export default function BookingPage() {
             // set data to local storage
             setLocalStorage(formData);
         };
+
+        // // checking if there is anything in the errors object
+        // const validationErrors = validate();
+        // if (Object.keys(validationErrors).length === 0) {
+        //     // if there is nothing, then validate the form
+        // } else {
+        //     // if there is something, set errors to the errors object and display error messages in the code
+        //     setErrors(validationErrors);
+        // }
     };
 
     const [state, dispatch] = useReducer(availableTimes, initializeTimes(today));

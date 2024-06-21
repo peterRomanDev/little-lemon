@@ -1,9 +1,6 @@
-/* style */
-.booking-form .form {
-    width: 3000px;
-}
-
-.booking-form .label {
+/* text */
+.booking-form .label,
+.booking-form .error-message {
     font-family: var(--font-karla);
     font-size: var(--fs-18px);
     font-weight: var(--fw-bold);
@@ -25,4 +22,18 @@
     border: 2px solid var(--color-black);
     border-radius: var(--br-small);
     padding: var(--space-1rem);
+}
+
+/* style */
+.booking-form .form {
+    width: 3000px;
+}
+
+/* errors */
+.booking-form .error-message {
+    color: red;
+}
+
+.booking-form .error-border {
+    border: 2px solid red;
 }

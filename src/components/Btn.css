@@ -39,11 +39,13 @@
     color: var(--color-yellow);
 }
 
-.btn:disabled {
+.disabled,
+.disabled:hover,
+.disabled:active {
     background-color: var(--color-gray);
     color: var(--color-green);
 
-    cursor: not-allowed;
+    cursor: auto;
 }
 
 /* Tablet */
