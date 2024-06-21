@@ -14,7 +14,7 @@ export default function useScroll() {
       }
     }
 
-    if (pathname === '/booking') {
+    if (pathname === '/booking' || pathname === '/booking-confirmed') {
         window.scrollTo(0, 0);
     }
   }, [pathname, hash]);

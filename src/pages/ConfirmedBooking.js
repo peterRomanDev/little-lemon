@@ -7,12 +7,16 @@ import Section from "../components/Section";
 
 // context
 import { usePageContent } from "../hooks/usePageContent";
+import useScrollToSection from "../hooks/useScrollTo";
 
 export default function ConfirmedBooking() {
   // a booking confirmation page
   
   const { sections, infoCards } = usePageContent();
 
+  // scroll to top when loaded
+  useScrollToSection();
+  
   return (
     <>
       <Header />
