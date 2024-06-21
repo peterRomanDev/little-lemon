@@ -16,7 +16,7 @@ import imgWojakMleczko from '../images/other/Wojak-Mleczko.jpg';
 import imgJanePeterson from '../images/other/Jane-Peterson.jpg';
 
 // context
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const PageContentContext = createContext();
 
@@ -281,7 +281,7 @@ const sections = {
       color: colors.black
     }
   },
-  reservationSuccess: {
+  bookingConfirmed: {
     id: 'booking-success',
     h2: {
       isShown: true,
@@ -437,6 +437,42 @@ const infoCards = {
       list: []
     }
   },
+  bookingConfirmed: {
+    card: {
+      bgColor: colors.green
+    },
+    hs: {
+        isShown: false,
+        h1: {
+            isShown: false,
+            text: '',
+            color: ''
+        },
+        h2: {
+            isShown: false,
+            text: '',
+            color: ''
+        }
+    },
+    ps: {
+      isShown: true,
+      list: [
+        'Thank you for choosing Little Lemon. We are looking forward to hosting you and we hope you will have an otherworldly experience!'
+      ],
+      color: colors.white
+    },
+    img: {
+      isShown: false,
+      src: '',
+      alt: ''
+    },
+    links: {
+      isShown: true,
+      list: [
+        { title: btns.backToHomepage.text, href: links.home.href },
+      ]
+    }
+  }
 };
 
 // header details

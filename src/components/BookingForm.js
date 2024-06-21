@@ -1,5 +1,6 @@
 // hooks
 import { useState } from 'react';
+import { usePageContent } from '../hooks/usePageContent';
 
 // style
 import './BookingForm.css';
