@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <header className="header bg-white">
       {/* a dark background covers the whole screen when the menu icon is clicked and disappears when it is clicked again */}
-      {isOpen && <div role="button" className="bg-dark" onClick={handleBackdropClick}></div>}
+      {isOpen && <div aria-label="On Click" className="bg-dark" onClick={handleBackdropClick}></div>}
       <div className="img-frame">
         <Link className="a logo" to={links && links.home.href}>
           <img

@@ -17,7 +17,7 @@ export default function BookingForm({ availableTimes, dispatch }) {
         setFormData(prev => ({ ...prev, [name]: value }));
 
         if (name === 'date') {
-            dispatch({ type: 'UPDATE_TIMES', date: value });
+            dispatch({ type: 'UPDATE_TIMES', date: new Date(value) });
         }
     };
 

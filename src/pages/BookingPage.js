@@ -9,36 +9,53 @@ import BookingForm from "../components/BookingForm";
 // hooks
 import { usePageContent } from '../hooks/usePageContent';
 import useScrollToSection from "../hooks/useScrollTo";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 
-export const initializeTimes = () => ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
-export const availableTimes = (state, action) => {
-    // const { type } = action;
-    // switch (type) {
-    //     case 'UPDATE_TIMES':
-    //         return updateTimes();
-    //     default:
-    //         return state;
-    // }
-    switch (action.type) {
+const seededRandom = function (seed) {
+    var m = 2**35 - 31;
+    var a = 185852;
+    var s = seed % m;
+    return function () {
+        return (s = s * a % m) / m;
+    };
+}
+
+const fetchAPI = function(date) {
+    let result = [];
+    let random = seededRandom(date.getDate());
+
+    for(let i = 17; i <= 23; i++) {
+        if(random() < 0.5) {
+            result.push(i + ':00');
+        }
+        if(random() < 0.5) {
+            result.push(i + ':30');
+        }
+    }
+    return result;
+};
+
+const today = new Date();
+
+export const initializeTimes = date => fetchAPI(date);
+
+export const updateTimes = date => fetchAPI(date);
+
+const availableTimes = (state, action) => {
+    const { type, date } = action;
+
+    switch (type) {
         case 'UPDATE_TIMES':
-            return updateTimes(action.date);
+            return updateTimes(date);
         default:
             return state;
     }
 };
 
-// Function to update times based on the selected date
-export const updateTimes = date => {
-    // For now, return the same times regardless of the date
-    // This can be modified to return different times based on the date
-    return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
-};
-
 export default function BookingPage() {
     const { sections, infoCards } = usePageContent();
 
-    const [state, dispatch] = useReducer(availableTimes, initializeTimes());
+    const [state, dispatch] = useReducer(availableTimes, initializeTimes(today));
 
     useScrollToSection();
 
@@ -50,7 +67,7 @@ export default function BookingPage() {
                     <InfoCard infoCard={infoCards && infoCards.heroReservationPage} />
                 </Section>
                 <Section>
-                    <BookingForm availableTimes={state.availableTimes} dispatch={dispatch} />
+                    <BookingForm availableTimes={state} dispatch={dispatch} />
                 </Section>
             </Main>
             <Footer />
