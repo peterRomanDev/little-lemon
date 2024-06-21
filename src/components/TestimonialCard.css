@@ -23,7 +23,7 @@
     text-align: left;
 }
 
-/* sizes */
+/* style */
 .testimonial-card .card {
     width: 285px;
     height: 585px;
@@ -121,7 +121,7 @@
 
 /* Tablet */
 @media (min-width: 768px) {
-    /* sizes */
+    /* style */
     .testimonial-card .card {
         width: 509px;
         height: 550px;
@@ -146,7 +146,7 @@
 
 /* Desktop */
 @media (min-width: 992px) {
-    /* sizes */
+    /* style */
     .testimonial-card .card {
         width: 813px;
         height: 500px;

@@ -1,3 +1,5 @@
+// context storing all the data used everywhere throughout the project
+
 // images - brand assets
 import logo1 from '../images/brand-assets/Logo.svg';
 
@@ -16,7 +18,7 @@ import imgWojakMleczko from '../images/other/Wojak-Mleczko.jpg';
 import imgJanePeterson from '../images/other/Jane-Peterson.jpg';
 
 // context
-import { createContext, useState } from "react";
+import { createContext } from "react";
 
 export const PageContentContext = createContext();
 
@@ -38,56 +40,70 @@ const colors = {
 
 // images
 const imgs = {
-    brandAssets: {
-      logo1: {
-        src: logo1,
-        alt: 'Little Lemon logo'
-      }
-    },
-    dishes: {
-      greekSalad: {
-        src: imgGreekSalad,
-        alt: 'Greek Salad'
-      },
-      moussaka: {
-        src: imgMoussaka,
-        alt: 'Moussaka'
-      },
-      pizzaMargherita: {
-        src: imgPizzaMargherita,
-        alt: 'Pizza Margherita'
-      },
-      spaghettiCarbonara: {
-        src: imgSpaghettiCarbonara,
-        alt: 'Spaghetti Carbonara'
-      },
-      veggieCousCous: {
-        src: imgVeggieCousCous,
-        alt: 'Veggie cous cous'
-      },
-      crepeWithNutella: {
-        src: imgCrepeWithNutella,
-        alt: 'Crepe with nutella'
-      },
-    },
-    other: {
-      chefs: {
-        src: imgChefs,
-        alt: 'Adrian and Francesco, the chefs of the Little Lemon restaurant'
-      },
-      johnSmith: {
-        src: imgJohnSmith,
-        alt: 'John Smith'
-      },
-      wojakMleczko: {
-        src: imgWojakMleczko,
-        alt: 'Wojak Mleczko'
-      },
-      janePeterson: {
-        src: imgJanePeterson,
-        alt: 'Jane Peterson'
-      }
+  brandAssets: {
+    // brand assets
+    // Little Lemon logo
+    logo1: {
+      src: logo1,
+      alt: 'Little Lemon logo'
     }
+  },
+  dishes: {
+    // dishes of the restaurant
+    greekSalad: {
+      // Greek Salad
+      src: imgGreekSalad,
+      alt: 'Greek Salad'
+    },
+    moussaka: {
+      // Moussaka
+      src: imgMoussaka,
+      alt: 'Moussaka'
+    },
+    pizzaMargherita: {
+      // Pizza Margherita
+      src: imgPizzaMargherita,
+      alt: 'Pizza Margherita'
+    },
+    spaghettiCarbonara: {
+      // Spaghetti Carbonara
+      src: imgSpaghettiCarbonara,
+      alt: 'Spaghetti Carbonara'
+    },
+    veggieCousCous: {
+      // Veggie Cous Cous
+      src: imgVeggieCousCous,
+      alt: 'Veggie cous cous'
+    },
+    crepeWithNutella: {
+      // Crepe with Nutella
+      src: imgCrepeWithNutella,
+      alt: 'Crepe with nutella'
+    },
+  },
+  other: {
+    // testimonial authors, other
+    chefs: {
+      // picture of the two chefs in their early days
+      src: imgChefs,
+      alt: 'Adrian and Francesco, the chefs of the Little Lemon restaurant'
+    },
+    johnSmith: {
+      // John Smith - author of a testimonial
+      src: imgJohnSmith,
+      alt: 'John Smith'
+    },
+    wojakMleczko: {
+      // Wojak Mleczko - author of a testimonial
+      src: imgWojakMleczko,
+      alt: 'Wojak Mleczko'
+    },
+    janePeterson: {
+      // Jane Peterson - author of a testimonial
+      src: imgJanePeterson,
+      alt: 'Jane Peterson'
+    }
+  }
 };
 
 // buttons
@@ -105,6 +121,7 @@ const btns = {
 // dishes
 const dishes = [
     {
+      // Greek salad
       id: 1,
       img: {
         src: imgs.dishes.greekSalad.src,
@@ -115,6 +132,7 @@ const dishes = [
       price: 9.99
     },
     {
+      // Moussaka
       id: 2,
       img: {
         src: imgs.dishes.moussaka.src,
@@ -125,6 +143,7 @@ const dishes = [
       price: 25.99
     },
     {
+      // Pizza Margherita
       id: 3,
       img: {
         src: imgs.dishes.pizzaMargherita.src,
@@ -135,6 +154,7 @@ const dishes = [
       price: 12.99
     },
     {
+      // Spaghetti Carbonara
       id: 4,
       img: {
         src: imgs.dishes.spaghettiCarbonara.src,
@@ -145,6 +165,7 @@ const dishes = [
       price: 22.99
     },
     {
+      // Veggie Cous Cous
       id: 5,
       img: {
         src: imgs.dishes.veggieCousCous.src,
@@ -155,6 +176,7 @@ const dishes = [
       price: 19.99
     },
     {
+      // Crepe with nutella
       id: 6,
       img: {
         src: imgs.dishes.crepeWithNutella.src,
@@ -169,6 +191,7 @@ const dishes = [
 // testimonials
 const testimonials = [
     {
+      // John Smith
       id: 1,
       img: {
         src: imgs.other.johnSmith.src,
@@ -180,6 +203,7 @@ const testimonials = [
       jobTitle: 'Mediterranean cuisine connoisseur'
     },
     {
+      // Wojak Mleczko
       id: 2,
       img: {
         src: imgs.other.wojakMleczko.src,
@@ -191,6 +215,7 @@ const testimonials = [
       jobTitle: 'Michelin star chef'
     },
     {
+      // Jane Peterson
       id: 3,
       img: {
         src: imgs.other.janePeterson.src,
@@ -206,18 +231,22 @@ const testimonials = [
 // links
 const links = {
   home: {
+    // /#home
     title: 'Home',
     href: '/#home'
   },
   menu: {
+    // /#menu
     title: 'Menu',
     href: '/#menu'
   },
   about: {
+    // /#about
     title: 'About',
     href: '/#about'
   },
   booking: {
+    // /booking
     title: 'Reserve a table',
     href: '/booking'
   }
@@ -226,6 +255,7 @@ const links = {
 // sections
 const sections = {
   heroLandingPage: {
+    // landing page - hero section
     id: 'home',
     h2: {
       isShown: false,
@@ -234,6 +264,7 @@ const sections = {
     }
   },
   menu: {
+    // menu
     id: 'menu',
     h2: {
       isShown: true,
@@ -242,6 +273,7 @@ const sections = {
     }
   },
   about: {
+    // about
     id: 'about',
     h2: {
       isShown: true,
@@ -250,6 +282,7 @@ const sections = {
     }
   },
   testimonials: {
+    // testimonials
     id: 'testimonials',
     h2: {
       isShown: true,
@@ -258,6 +291,7 @@ const sections = {
     }
   },
   cta: {
+    // call to action
     id: 'reserve-a-table',
     h2: {
       isShown: true,
@@ -266,6 +300,7 @@ const sections = {
     }
   },
   heroReservationPage: {
+    // reservation page - hero section
     id: 'booking',
     h2: {
       isShown: false,
@@ -274,6 +309,7 @@ const sections = {
     }
   },
   reservation: {
+    // reservation page - booking form
     id: 'booking-form',
     h2: {
       isShown: true,
@@ -282,6 +318,7 @@ const sections = {
     }
   },
   bookingConfirmed: {
+    // booking confirmed page
     id: 'booking-success',
     h2: {
       isShown: true,
@@ -294,6 +331,7 @@ const sections = {
 // info cards
 const infoCards = {
   heroLandingPage: {
+    // card presenting the Little Lemon restaurant
     card: {
       bgColor: colors.green
     },
@@ -331,6 +369,7 @@ const infoCards = {
     }
   },
   about: {
+    // card presenting the back story of the Little Lemon restaurant
     card: {
       bgColor: colors.yellow
     },
@@ -368,6 +407,7 @@ const infoCards = {
     }
   },
   cta: {
+    // card inviting users to take action (reserve a table)
     card: {
       bgColor: colors.green
     },
@@ -404,6 +444,7 @@ const infoCards = {
     }
   },
   heroReservationPage: {
+    // card presenting instructions on how to book a table
     card: {
       bgColor: colors.green
     },
@@ -438,6 +479,7 @@ const infoCards = {
     }
   },
   bookingConfirmed: {
+    // card confirming that a table has been successfully booked
     card: {
       bgColor: colors.green
     },
@@ -528,4 +570,4 @@ export function PageContentProvider({ children }) {
             {children}
         </PageContentContext.Provider>
     );
-}
+};

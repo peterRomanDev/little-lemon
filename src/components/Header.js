@@ -11,16 +11,21 @@ import { usePageContent } from '../hooks/usePageContent';
 import './Header.css';
 
 export default function Header() {
+  // a header consisting of the restaurant logo and a navigation
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [isSmallScreen, setIsSmallScreen] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const { links, headerDets } = usePageContent();
 
-  const handleBackdropClick = () => setIsOpen(false);
+  const handleBackdropClick = () =>{
+    // a function to close the navigation on small screens when the dark backdrop is clicked
+    setIsOpen(false);
+  };
 
-  // the screen is considered small if it is smaller than 768px (Mobile view)
-  // the window width is reevaluated everytime the window is resized
   useEffect(() => {
+    // the screen is considered small if it is smaller than 768px (Mobile view)
+    // the window width is reevaluated everytime the window is resized
     const handleResize = () => setScreenWidth(window.innerWidth);
     const determinteScreenWidth = () => screenWidth < 768 ? setIsSmallScreen(true) : setIsSmallScreen(false);
     const handleNavBarClosing = () => {

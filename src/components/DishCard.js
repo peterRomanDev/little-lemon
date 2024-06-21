@@ -2,6 +2,8 @@
 import './DishCard.css';
 
 export default function DishCard({ dish }) {
+    // a single dish card displaying information about the dish (image, name, description, price)
+
   return (
     <div className="dish-card bg-green">
         <div className="section-top">

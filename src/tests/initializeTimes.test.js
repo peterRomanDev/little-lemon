@@ -1,6 +1,8 @@
+// components
 import { initializeTimes } from "../pages/BookingPage";
 
-test('returns a non-empty array', () => {
+test('checks if the initial times are a not an empty array', () => {
+    // checks if the initial times are a not an empty array
     const arrayItems = initializeTimes();
 
     expect(Array.isArray(arrayItems)).toBe(true);

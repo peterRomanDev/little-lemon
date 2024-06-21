@@ -12,8 +12,11 @@ import { usePageContent } from '../hooks/usePageContent';
 import useScroll from "../hooks/useScrollTo";
 
 export default function HomePage() {
+  // homepage / landing page with the majority of the content
+  
   const { sections, infoCards } = usePageContent();
 
+  // scroll to specific sections of the page
   useScroll();
 
   return (

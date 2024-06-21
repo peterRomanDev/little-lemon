@@ -1,3 +1,4 @@
+/* Mobile */
 /* text */
 .footer .h3 {
     font-family: var(--font-karla);
@@ -30,7 +31,7 @@
         0 0 0 var(--space-1rem) var(--color-yellow);
 }
 
-/* sizes */
+/* style */
 .footer {
     padding: var(--space-4rem) 0;
 }
@@ -87,7 +88,7 @@
 
 /* Desktop */
 @media (min-width: 992px) {
-    /* sizes */
+    /* style */
     .footer .img-frame {
         width: 233px;
         height: 233px;

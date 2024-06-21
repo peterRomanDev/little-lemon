@@ -9,17 +9,19 @@ import Section from "../components/Section";
 import { usePageContent } from "../hooks/usePageContent";
 
 export default function ConfirmedBooking() {
-    const { sections, infoCards } = usePageContent();
+  // a booking confirmation page
+  
+  const { sections, infoCards } = usePageContent();
 
   return (
     <>
       <Header />
-            <Main>
-                <Section section={sections.bookingConfirmed}>
-                    <InfoCard infoCard={infoCards && infoCards.bookingConfirmed} />
-                </Section>
-            </Main>
-        <Footer />
+      <Main>
+        <Section section={sections.bookingConfirmed}>
+          <InfoCard infoCard={infoCards && infoCards.bookingConfirmed} />
+        </Section>
+      </Main>
+      <Footer />
     </>
   );
 }

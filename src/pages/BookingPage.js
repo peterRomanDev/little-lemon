@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 
 const today = new Date();
 
+// a function to generate an array of times
 const seededRandom = function (seed) {
     var m = 2**35 - 31;
     var a = 185852;
@@ -23,6 +24,7 @@ const seededRandom = function (seed) {
     };
 }
 
+// a function to generate an array of times
 const fetchAPI = function(date) {
     let result = [];
     let random = seededRandom(date.getDate());
@@ -38,17 +40,20 @@ const fetchAPI = function(date) {
     return result;
 };
 
+// a function to confirm that the form has been submitted
 const submitAPI = function(formData) {
     return true;
 };
 
+// a function to initialize the Choose Time input field with an array of times
 export const initializeTimes = () => fetchAPI(today);
 
+// a function to update the Choose Time input field with a new array of times
 export const updateTimes = date => fetchAPI(date);
 
+// a reducer function updating the times
 const availableTimes = (state, action) => {
     const { type, date } = action;
-    console.log(date, state);
 
     switch (type) {
         case 'UPDATE_TIMES':
@@ -59,22 +64,31 @@ const availableTimes = (state, action) => {
 };
 
 export default function BookingPage() {
+    // a page with the table booking form
+
     const { sections, infoCards } = usePageContent();
+
+    // a function to navigate to a different page
     const navigate = useNavigate();
 
+    // a function to handle form submitting
     const submitForm = formData => {
         const setLocalStorage = data => localStorage.setItem('Form data', data);
         const getLocalStorage = data => localStorage.getItem('Form data');
         const deleteLocalStorage = data => localStorage.removeItem('Form data');
 
         if (submitAPI(formData)) {
+            // navigate to ConfirmedBooking.js
             navigate('/booking-confirmed');
+
+            // set data to local storage
             setLocalStorage(formData);
         };
     };
 
     const [state, dispatch] = useReducer(availableTimes, initializeTimes(today));
 
+    // scroll to top when loaded
     useScrollToSection();
 
     return (

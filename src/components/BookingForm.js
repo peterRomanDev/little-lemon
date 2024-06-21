@@ -5,6 +5,9 @@ import { useState } from 'react';
 import './BookingForm.css';
 
 export default function BookingForm({ availableTimes, dispatch, submitForm }) {
+    // the booking form with the following fields: date, time, amount of guests, occasion
+
+    // the data from the form stored
     const [formData, setFormData] = useState({
         date: '',
         time: '18:00',
@@ -12,11 +15,15 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         occasion: 'Birthday'
     });
 
+    // handle any change to the input field
     const handleChange = e => {
         const { name, value } = e.target;
+
+        // update the form data
         setFormData(prev => ({ ...prev, [name]: value }));
 
         if (name === 'date') {
+            // when a new date is selected, update the list of available times
             dispatch({ type: 'UPDATE_TIMES', date: new Date(value) });
         }
     };
@@ -27,6 +34,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         style={{ display: 'grid', gap: '20px' }}
         onSubmit={() => submitForm(formData)}
     >
+        {/* a date picker to choose a date of booking */}
         <label data-testid="my-test-id" htmlFor="res-date" className="label">Choose date*</label>
         <input
             data-testid="test-input"
@@ -38,6 +46,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
             onChange={e => handleChange(e)}
             value={formData.date}
         />
+        {/* a dropdown menu to select an available time */}
         <label htmlFor="res-time" className="label">Choose time*</label>
         <select
             required
@@ -49,6 +58,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         >
             {availableTimes && availableTimes.map(availableTime => <option key={availableTime} className="option">{availableTime}</option>)}
         </select>
+        {/* an input field to enter a number representing the amount of guests */}
         <label htmlFor="guests" className="label">Number of guests*</label>
         <input
             required
@@ -62,6 +72,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
             onChange={e => handleChange(e)}
             value={formData.guests}
         />
+        {/* a dropdown menu to select occasion */}
         <label htmlFor="occasion" className="label">Occasion*</label>
         <select
             required
@@ -74,6 +85,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
             <option>Birthday</option>
             <option>Anniversary</option>
         </select>
+        {/* submit button */}
         <input
             type="submit"
             className="btn"

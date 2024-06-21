@@ -8,6 +8,8 @@ import { usePageContent } from "../hooks/usePageContent";
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  // footer with columns consisting of an image, links, and information
+
   const { footerDets } = usePageContent();
 
   return (
@@ -20,6 +22,7 @@ export default function Footer() {
         />
       </div>
       <div className="cols">
+        {/* columns with information */}
         {footerDets && footerDets.cols.map(col => <Column key={col.title} col={col} />)}
       </div>
     </footer>
@@ -27,9 +30,12 @@ export default function Footer() {
 }
 
 function Column({ col }) {
+  // a single column that appears in the footer
+
   return (
     <div className="col text-black">
       <h3 className="h3">{col && col.title}</h3>
+      {/* if there are links, they will be rendered */}
       {col && col.links && (
         <nav>
           <ul className="list">
@@ -37,6 +43,7 @@ function Column({ col }) {
           </ul>
         </nav>
       )}
+      {/* if there are paragraphs/pieces of text, they will be rendered */}
       {col && col.ps && (
         <ul className="list">
           {col.ps.map(p => <li key={p.text} className="p text-black"><p>{p.text}</p></li>)}

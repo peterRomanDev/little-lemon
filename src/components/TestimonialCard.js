@@ -9,6 +9,8 @@ import { usePageContent } from '../hooks/usePageContent';
 import Btn from './Btn';
 
 export default function TestimonialCard() {
+  // a testimonial card with info about the author, the review and buttons to cycle through the testimonials
+
   const { btns, testimonials } = usePageContent();
 
   const [testimonial, setTestimonial] = useState(testimonials[0]);

@@ -8,6 +8,8 @@ import DishCard from './DishCard';
 import './DishCards.css';
 
 export default function DishCards() {
+  // a series of dish card appearing next to each other
+
   const { dishes } = usePageContent();
 
   return (
