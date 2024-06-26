@@ -24,6 +24,8 @@ export default function Header() {
   };
 
   useEffect(() => {
+    // used to determine screen size
+
     // the screen is considered small if it is smaller than 768px (Mobile view)
     // the window width is reevaluated everytime the window is resized
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -44,6 +46,84 @@ export default function Header() {
       window.removeEventListener('resize', handleResize);
     };
   }, [screenWidth, isOpen, isSmallScreen]);
+
+  useEffect(() => {
+    // used to add/remove highlighting to nav-links on both screens
+
+    const linksHome = document.querySelectorAll('.a-home');
+    const linksMenu = document.querySelectorAll('.a-menu');
+    const linksAbout = document.querySelectorAll('.a-about');
+    const linksReservation = document.querySelectorAll('.a-reservation');
+    const sections = document.querySelectorAll('.page-section');
+
+    const sectionIsOnScreen = sections => {
+      // checking which section appears on screen
+
+      sections.forEach(section => {
+        if (
+          // if section with the id of 'home' appears on screen
+          section.target.id === 'home' && section.isIntersecting
+        ) {
+          // highlight nav-link 'Home', remove highlighting from the remaining nav-links
+          linksMenu.forEach(link => link.classList.remove('a-active'));
+          linksAbout.forEach(link => link.classList.remove('a-active'));
+          linksReservation.forEach(link => link.classList.remove('a-active'));
+          linksHome.forEach(link => link.classList.add('a-active'));
+        } else if (
+          // if section with the id of 'menu' appears on screen
+          section.target.id === 'menu' && section.isIntersecting
+        ) {
+          // highlight nav-link 'Menu', remove highlighting from the remaining nav-links
+          linksHome.forEach(link => link.classList.remove('a-active'));
+          linksAbout.forEach(link => link.classList.remove('a-active'));
+          linksReservation.forEach(link => link.classList.remove('a-active'));
+          linksMenu.forEach(link => link.classList.add('a-active'));
+        } else if (
+          // if section with the id of 'about', 'testimonials', or 'reserve-a-table' appears on screen
+          (section.target.id === 'about' && section.isIntersecting) ||
+          (section.target.id === 'testimonials' && section.isIntersecting) ||
+          (section.target.id === 'reserve-a-table' && section.isIntersecting)
+        ) {
+          // highlight nav-link 'About', remove highlighting from the remaining nav-links
+          linksHome.forEach(link => link.classList.remove('a-active'));
+          linksMenu.forEach(link => link.classList.remove('a-active'));
+          linksReservation.forEach(link => link.classList.remove('a-active'));
+          linksAbout.forEach(link => link.classList.add('a-active'));
+        } else if (
+          // if section with the id of 'booking', 'booking-form', or 'booking-success' appears on screen
+          (section.target.id === 'booking' && section.isIntersecting) ||
+          (section.target.id === 'booking-form' && section.isIntersecting) ||
+          (section.target.id === 'booking-success' && section.isIntersecting)
+        ) {
+          // highlight nav-link 'Reserve a Table', remove highlighting from the remaining nav-links
+          linksHome.forEach(link => link.classList.remove('a-active'));
+          linksMenu.forEach(link => link.classList.remove('a-active'));
+          linksAbout.forEach(link => link.classList.remove('a-active'));
+          linksReservation.forEach(link => link.classList.add('a-active'));
+        }
+      });
+    };
+
+    const options = {
+      rootMargin: '0px 0px -300px 0px'
+    };
+
+    const handleScroll = () => {
+      // whenever the page is scrolled, it is evaluated which section appears on screen
+      const observer = new IntersectionObserver(sectionIsOnScreen, options);
+      sections.forEach(section => observer.observe(section));
+    };
+
+    // initially, when the page is loaded, it is evaluated which section appears on screen
+    const observer = new IntersectionObserver(sectionIsOnScreen, options);
+    sections.forEach(section => observer.observe(section));
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [screenWidth, isOpen]);
 
   return (
     <header className="header bg-white">

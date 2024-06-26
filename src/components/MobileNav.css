@@ -53,7 +53,8 @@
         background-color 100ms
 }
 
-.mobile-nav .a:hover {
+.mobile-nav .a:hover,
+.mobile-nav .a-active {
     background-color: var(--color-yellow);
 
     cursor: pointer;

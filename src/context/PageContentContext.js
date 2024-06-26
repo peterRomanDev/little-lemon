@@ -233,22 +233,26 @@ const links = {
   home: {
     // /#home
     title: 'Home',
-    href: '/#home'
+    href: '/#home',
+    className: 'home'
   },
   menu: {
     // /#menu
     title: 'Menu',
-    href: '/#menu'
+    href: '/#menu',
+    className: 'menu'
   },
   about: {
     // /#about
     title: 'About',
-    href: '/#about'
+    href: '/#about',
+    className: 'about'
   },
   booking: {
     // /booking
     title: 'Reserve a table',
-    href: '/booking'
+    href: '/booking',
+    className: 'reservation'
   }
 };
 
@@ -526,10 +530,10 @@ const headerDets = {
       }
   },
   links: [
-      { title: links.home.title, href: links.home.href },
-      { title: links.menu.title, href: links.menu.href },
-      { title: links.about.title, href: links.about.href },
-      { title: links.booking.title, href: links.booking.href }
+      { title: links.home.title, href: links.home.href, className: links.home.className },
+      { title: links.menu.title, href: links.menu.href, className: links.menu.className },
+      { title: links.about.title, href: links.about.href, className: links.about.className },
+      { title: links.booking.title, href: links.booking.href, className: links.booking.className }
   ]
 };
 

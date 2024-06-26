@@ -26,11 +26,9 @@ export default function MobileNav({ links, isOpen, setIsOpen }) {
                 <ul className="list">
                     {links && links.map(link => (
                         <li key={link.title}>
-                            <Link to={link.href} onClick={handleClick} className="a">{link.title}</Link>
-                            {/* <Link to={link.href} onClick={handleClick} className="nav-link nav-text bg-white text-black">{link.title}</Link> */}
+                            <Link to={link.href} onClick={handleClick} className={`a a-${link.className} qwe`}>{link.title}</Link>
                         </li>
                     ))}
-                    {/* {links && links.map(link => <li className="li bg-white" key={link.title}><Link to={link.href} onClick={handleClick} className="a">{link.title}</Link></li>)} */}
                 </ul>
             </nav>
         )}

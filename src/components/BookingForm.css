@@ -14,6 +14,7 @@
     font-weight: var(--fw-regular);
 }
 
+/* style */
 .booking-form .input,
 .booking-form .select,
 .booking-form .option {
@@ -22,9 +23,16 @@
     border: 2px solid var(--color-black);
     border-radius: var(--br-small);
     padding: var(--space-1rem);
+
+    transition: box-shadow 100ms;
 }
 
-/* style */
+.booking-form .input:focus,
+.booking-form .select:focus,
+.booking-form .option:focus {
+    box-shadow: var(--box-shadow-focus);
+}
+
 .booking-form .form {
     width: 3000px;
 }

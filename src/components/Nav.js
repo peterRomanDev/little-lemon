@@ -13,7 +13,7 @@ export default function Nav({ links }) {
       <ul className="list">
         {links && links.map(link => (
           <li key={link.title}>
-            <Link to={link.href} className="a">{link.title}</Link>
+            <Link to={link.href} className={`a a-${link.className}`}>{link.title}</Link>
           </li>
         ))}
       </ul>

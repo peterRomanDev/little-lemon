@@ -19,7 +19,13 @@
 
     transition:
         color 100ms,
+        /* background-color 100ms, */
         box-shadow 100ms
+}
+
+.nav-large-screen .a-active {
+    background-color: var(--color-green);
+    color: var(--color-white);
 }
 
 .nav-large-screen .a:focus {
