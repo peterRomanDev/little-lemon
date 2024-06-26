@@ -11,6 +11,17 @@
     background-color: rgb(0, 0, 0, 0.5);
 }
 
+.header .logo {
+    padding: var(--space-0-5rem);
+    border-radius: var(--br-pill);
+    transition: box-shadow 100ms;
+}
+
+.header .logo:focus {
+    outline: 0;
+    box-shadow: var(--box-shadow-focus);
+}
+
 /* layout */
 .header {
     display: flex;

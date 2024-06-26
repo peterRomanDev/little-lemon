@@ -50,7 +50,7 @@ export default function Header() {
       {/* a dark background covers the whole screen when the menu icon is clicked and disappears when it is clicked again */}
       {isOpen && <div aria-label="On Click" className="bg-dark" onClick={handleBackdropClick}></div>}
       <div className="img-frame">
-        <Link className="a logo" to={links && links.home.href}>
+        <Link className="logo" to={links && links.home.href}>
           <img
             className="img"
             src={headerDets && headerDets.imgs.logo.src}

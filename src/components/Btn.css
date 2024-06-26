@@ -30,9 +30,7 @@
 
 .btn:focus {
     outline: 0;
-    box-shadow:
-        0 0 0 var(--space-0-5rem) var(--color-green),
-        0 0 0 var(--space-1rem) var(--color-yellow);
+    box-shadow: var(--box-shadow-focus);
 }
 
 .btn:active {

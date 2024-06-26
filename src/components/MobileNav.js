@@ -19,12 +19,18 @@ export default function MobileNav({ links, isOpen, setIsOpen }) {
   return (
     <div className="mobile-nav">
         {/* hamburger icon */}
-        <button className="a btn-menu-icon bg-yellow" onClick={handleClick}>{isOpen ? 'X' : '☰'}</button>
+        <button className="btn-menu-icon" onClick={handleClick}>{isOpen ? 'X' : '☰'}</button>
         {/* nav links */}
         {isOpen && (
             <nav className="nav">
                 <ul className="list">
-                    {links && links.map(link => <li className="li bg-white" key={link.title}><Link to={link.href} onClick={handleClick} className="a">{link.title}</Link></li>)}
+                    {links && links.map(link => (
+                        <li key={link.title}>
+                            <Link to={link.href} onClick={handleClick} className="a">{link.title}</Link>
+                            {/* <Link to={link.href} onClick={handleClick} className="nav-link nav-text bg-white text-black">{link.title}</Link> */}
+                        </li>
+                    ))}
+                    {/* {links && links.map(link => <li className="li bg-white" key={link.title}><Link to={link.href} onClick={handleClick} className="a">{link.title}</Link></li>)} */}
                 </ul>
             </nav>
         )}
