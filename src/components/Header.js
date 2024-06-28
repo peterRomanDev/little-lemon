@@ -60,9 +60,12 @@ export default function Header() {
       // checking which section appears on screen
 
       sections.forEach(section => {
+        // defining how much of a section needs to be visible in order to react to it
+        const visibleSectionPart = 300;
+
         if (
-          // if section with the id of 'home' appears on screen
-          section.target.id === 'home' && section.isIntersecting
+          // if the defined visible part of the section with the id of 'home' appears on screen
+          section.target.id === 'home' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart
         ) {
           // highlight nav-link 'Home', remove highlighting from the remaining nav-links
           linksMenu.forEach(link => link.classList.remove('a-active'));
@@ -70,8 +73,8 @@ export default function Header() {
           linksReservation.forEach(link => link.classList.remove('a-active'));
           linksHome.forEach(link => link.classList.add('a-active'));
         } else if (
-          // if section with the id of 'menu' appears on screen
-          section.target.id === 'menu' && section.isIntersecting
+          // if the defined visible part of the section with the id of 'menu' appears on screen
+          section.target.id === 'menu' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart
         ) {
           // highlight nav-link 'Menu', remove highlighting from the remaining nav-links
           linksHome.forEach(link => link.classList.remove('a-active'));
@@ -79,10 +82,10 @@ export default function Header() {
           linksReservation.forEach(link => link.classList.remove('a-active'));
           linksMenu.forEach(link => link.classList.add('a-active'));
         } else if (
-          // if section with the id of 'about', 'testimonials', or 'reserve-a-table' appears on screen
-          (section.target.id === 'about' && section.isIntersecting) ||
-          (section.target.id === 'testimonials' && section.isIntersecting) ||
-          (section.target.id === 'reserve-a-table' && section.isIntersecting)
+          // if the defined visible part of the section with the id of 'about', 'testimonials', or 'reserve-a-table' appears on screen
+          (section.target.id === 'about' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart) ||
+          (section.target.id === 'testimonials' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart) ||
+          (section.target.id === 'reserve-a-table' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart)
         ) {
           // highlight nav-link 'About', remove highlighting from the remaining nav-links
           linksHome.forEach(link => link.classList.remove('a-active'));
@@ -90,10 +93,10 @@ export default function Header() {
           linksReservation.forEach(link => link.classList.remove('a-active'));
           linksAbout.forEach(link => link.classList.add('a-active'));
         } else if (
-          // if section with the id of 'booking', 'booking-form', or 'booking-success' appears on screen
-          (section.target.id === 'booking' && section.isIntersecting) ||
-          (section.target.id === 'booking-form' && section.isIntersecting) ||
-          (section.target.id === 'booking-success' && section.isIntersecting)
+          // if the defined visible part of the section with the id of 'booking', 'booking-form', or 'booking-success' appears on screen
+          (section.target.id === 'booking' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart) ||
+          (section.target.id === 'booking-form' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart) ||
+          (section.target.id === 'booking-success' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart)
         ) {
           // highlight nav-link 'Reserve a Table', remove highlighting from the remaining nav-links
           linksHome.forEach(link => link.classList.remove('a-active'));
@@ -104,18 +107,14 @@ export default function Header() {
       });
     };
 
-    const options = {
-      rootMargin: '0px 0px -300px 0px'
-    };
-
     const handleScroll = () => {
       // whenever the page is scrolled, it is evaluated which section appears on screen
-      const observer = new IntersectionObserver(sectionIsOnScreen, options);
+      const observer = new IntersectionObserver(sectionIsOnScreen);
       sections.forEach(section => observer.observe(section));
     };
 
     // initially, when the page is loaded, it is evaluated which section appears on screen
-    const observer = new IntersectionObserver(sectionIsOnScreen, options);
+    const observer = new IntersectionObserver(sectionIsOnScreen);
     sections.forEach(section => observer.observe(section));
 
     window.addEventListener('scroll', handleScroll);

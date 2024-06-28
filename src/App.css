@@ -9,7 +9,10 @@
   --color-white: #fff;
   --color-green: #495E57;
   --color-yellow: #F4CE14;
-  --color-focus: #24cffa;
+  --color-blue: #24cffa;
+  --color-transparent: rgba(255, 255, 255, 0);
+
+  --color-focus: var(--color-blue);
 
   /* fonts */
   --font-karla: "Karla", sans-serif;
