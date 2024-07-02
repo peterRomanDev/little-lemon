@@ -17,8 +17,9 @@ import imgJohnSmith from '../images/other/John-Smith.jpg';
 import imgWojakMleczko from '../images/other/Wojak-Mleczko.jpg';
 import imgJanePeterson from '../images/other/Jane-Peterson.jpg';
 
+// hooks
 // context
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const PageContentContext = createContext();
 
@@ -633,9 +634,12 @@ const scrollIntoView = href => {
 };
 
 export function PageContentProvider({ children }) {
-    return (
-        <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, headerDets, footerDets, scrollIntoView }}>
-            {children}
-        </PageContentContext.Provider>
-    );
+  // indicate whether the booking is confirmed (whether the form has been filled out correctly and submitted)
+  const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
+
+  return (
+    <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, headerDets, footerDets, scrollIntoView, isBookingConfirmed, setIsBookingConfirmed }}>
+      {children}
+    </PageContentContext.Provider>
+  );
 };

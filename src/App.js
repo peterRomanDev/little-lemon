@@ -8,44 +8,34 @@ import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
 // React Router
-// import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomePage />,
-    errorElement: <NotFoundPage />
-  },
-  {
-    path: '/booking',
-    element: <BookingPage />,
-  },
-  {
-    path: '/booking-confirmed',
-    element: <ConfirmedBooking />
-  },
-]);
+// hooks
+import usePageContent from './hooks/usePageContent';
+
 
 function App() {
+  const { isBookingConfirmed, setIsBookingConfirmed } = usePageContent();
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <HomePage />,
+      errorElement: <NotFoundPage />
+    },
+    {
+      path: '/booking',
+      element: <BookingPage />,
+    },
+    {
+      path: '/booking-confirmed',
+      // if the booking is confirmed (after filling out the booking form correctly and submitting it), it is possible to access the ConfirmedBooking page
+      element: isBookingConfirmed ? <ConfirmedBooking /> : <Navigate to="/" />
+    },
+  ]);
+
   return (
     <div className="App">
-      {/* <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<HomePage />}
-          />
-          <Route
-            path="/booking"
-            element={<BookingPage />}
-          />
-          <Route
-            path="/booking-confirmed"
-            element={<ConfirmedBooking />}
-          />
-        </Routes>
-      </BrowserRouter> */}
       <RouterProvider router={router} />
     </div>
   );

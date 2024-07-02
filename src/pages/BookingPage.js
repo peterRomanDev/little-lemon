@@ -67,7 +67,7 @@ const availableTimes = (state, action) => {
 export default function BookingPage() {
     // a page with the table booking form
 
-    const { sections, infoCards } = usePageContent();
+    const { sections, infoCards, isBookingConfirmed, setIsBookingConfirmed } = usePageContent();
 
     // a function to navigate to a different page
     const navigate = useNavigate();
@@ -82,6 +82,7 @@ export default function BookingPage() {
 
         if (submitAPI(formData)) {
             // navigate to ConfirmedBooking.js
+            setIsBookingConfirmed(true);
             navigate('/booking-confirmed');
 
             // set data to local storage
