@@ -3,12 +3,12 @@ import Nav from './Nav';
 import MobileNav from './MobileNav';
 import { Link } from 'react-router-dom';
 
-// hooks
-import { useEffect, useState } from 'react';
-import { usePageContent } from '../hooks/usePageContent';
-
 // style
 import './Header.css';
+
+// hooks
+import { useEffect, useState } from 'react';
+import usePageContent from '../hooks/usePageContent';
 
 export default function Header() {
   // a header consisting of the restaurant logo and a navigation
@@ -124,23 +124,27 @@ export default function Header() {
     };
   }, [screenWidth, isOpen]);
 
+  const { scrollIntoView } = usePageContent();
+
   return (
     <header className="header bg-white">
       {/* a dark background covers the whole screen when the menu icon is clicked and disappears when it is clicked again */}
       {isOpen && <div aria-label="On Click" className="bg-dark" onClick={handleBackdropClick}></div>}
       <div className="img-frame">
-        <Link className="logo" to={links && links.home.href}>
-          <img
-            className="img"
-            src={headerDets && headerDets.imgs.logo.src}
-            alt={headerDets && headerDets.imgs.logo.alt}
-          />
+        {/* when the logo is clicked, the section corresponding to the logo is scrolled into view */}
+        <Link className="logo" to={links && links.home.href} onClick={() => scrollIntoView(links.home.href)}>
+          <img className="img" src={headerDets && headerDets.imgs.logo.src} alt={headerDets && headerDets.imgs.logo.alt}/>
         </Link>
       </div>
       {/* display a hamburger menu icon and a dropdown navigation if the width of the window is less than 768px (Mobile) */}
       {/* display regular navigation if the width of the window is at least 768px (Tablet or Desktop) */}
       {isSmallScreen ? (
-        <MobileNav links={headerDets && headerDets.links} isOpenNav={isOpen} isOpen={isOpen} setIsOpen={setIsOpen} />
+        <MobileNav
+          links={headerDets && headerDets.links}
+          isOpenNav={isOpen}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
       ) : (
         <Nav links={headerDets && headerDets.links} />
       )}

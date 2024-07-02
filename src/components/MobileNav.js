@@ -1,14 +1,36 @@
-// hooks
-import { useEffect } from 'react';
+// components
+import { Link } from 'react-router-dom';
 
 // style
 import './MobileNav.css';
-import { Link } from 'react-router-dom';
+
+// hooks
+import { useEffect } from 'react';
+import usePageContent from '../hooks/usePageContent';
 
 export default function MobileNav({ links, isOpen, setIsOpen }) {
     // a navigation for Mobile viewport
 
-    const handleClick = () => isOpen ? setIsOpen(false) : setIsOpen(true);
+    const { scrollIntoView } = usePageContent();
+
+    const handleBtnMenuClick = () => {
+        // the hamburger menu icon is clicked
+
+        // if the navigation is open, close it
+        // if the navigation is closed, open it
+        isOpen ? setIsOpen(false) : setIsOpen(true);
+    };
+
+    const handleLinkClick = href => {
+        // a nav-link is clicked
+
+        // if the navigation is open, close it
+        // if the navigation is closed, open it
+        isOpen ? setIsOpen(false) : setIsOpen(true);
+
+        // the section corresponding to the nav-link is scrolled into view
+        scrollIntoView(href);
+    };
 
     useEffect(() => {
         // if the navigation is open, disable scrolling
@@ -19,14 +41,14 @@ export default function MobileNav({ links, isOpen, setIsOpen }) {
   return (
     <div className="mobile-nav">
         {/* hamburger icon */}
-        <button className="btn-menu-icon" onClick={handleClick}>{isOpen ? 'X' : '☰'}</button>
+        <button className="btn-menu-icon" onClick={handleBtnMenuClick}>{isOpen ? 'X' : '☰'}</button>
         {/* nav links */}
         {isOpen && (
             <nav className="nav">
                 <ul className="list">
                     {links && links.map(link => (
                         <li key={link.title}>
-                            <Link to={link.href} onClick={handleClick} className={`a a-${link.className} qwe`}>{link.title}</Link>
+                            <Link to={link.href} onClick={() => handleLinkClick(link.href)} className={`a a-${link.className} qwe`} >{link.title}</Link>
                         </li>
                     ))}
                 </ul>

@@ -4,7 +4,7 @@ import { useContext } from "react";
 // context
 import { PageContentContext } from "../context/PageContentContext";
 
-export const usePageContent = () => {
+export default function usePageContent() {
     // a hook that can be used by any component to access anything that is stored in the Page Content Context
     const context = useContext(PageContentContext);
 

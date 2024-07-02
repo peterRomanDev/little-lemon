@@ -330,6 +330,15 @@ const sections = {
       color: colors.black
     }
   },
+  notFound: {
+    // booking confirmed page
+    id: 'not-found',
+    h2: {
+      isShown: false,
+      text: '',
+      color: colors.black
+    }
+  },
 };
 
 // info cards
@@ -518,7 +527,42 @@ const infoCards = {
         { title: btns.backToHomepage.text, href: links.home.href },
       ]
     }
-  }
+  },
+  notFound: {
+    // card confirming that a table has been successfully booked
+    card: {
+      bgColor: colors.green
+    },
+    hs: {
+        isShown: true,
+        h1: {
+            isShown: true,
+            text: '404 Not Found',
+            color: ''
+        },
+        h2: {
+            isShown: false,
+            text: '',
+            color: ''
+        }
+    },
+    ps: {
+      isShown: false,
+      list: [],
+      color: colors.white
+    },
+    img: {
+      isShown: false,
+      src: '',
+      alt: ''
+    },
+    links: {
+      isShown: true,
+      list: [
+        { title: btns.backToHomepage.text, href: links.home.href },
+      ]
+    }
+  },
 };
 
 // header details
@@ -568,9 +612,29 @@ const footerDets = {
   ]
 };
 
+// scroll the specified section into view
+const scrollIntoView = href => {
+  if (href.includes('#')) {
+    const hash = href.slice(href.indexOf('#'));
+    const section = document.querySelector(hash);
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  if (href === '/booking') {
+    const section = document.querySelector('#booking');
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+};
+
 export function PageContentProvider({ children }) {
     return (
-        <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, headerDets, footerDets }}>
+        <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, headerDets, footerDets, scrollIntoView }}>
             {children}
         </PageContentContext.Provider>
     );

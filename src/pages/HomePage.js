@@ -8,15 +8,15 @@ import DishCards from "../components/DishCards";
 import TestimonialCard from "../components/TestimonialCard";
 
 // hooks
-import { usePageContent } from '../hooks/usePageContent';
-import useScroll from "../hooks/useScrollTo";
+import usePageContent from '../hooks/usePageContent';
+import useScroll from "../hooks/useScroll";
 
 export default function HomePage() {
   // homepage / landing page with the majority of the content
-  
+
   const { sections, infoCards } = usePageContent();
 
-  // scroll to specific sections of the page
+  // scroll to specific sections of the page when the hash changes
   useScroll();
 
   return (

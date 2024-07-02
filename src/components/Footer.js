@@ -1,11 +1,11 @@
+// components
+import { Link } from 'react-router-dom';
+
 // style
 import './Footer.css';
 
 // hooks
-import { usePageContent } from "../hooks/usePageContent";
-
-// components
-import { Link } from 'react-router-dom';
+import usePageContent from "../hooks/usePageContent";
 
 export default function Footer() {
   // footer with columns consisting of an image, links, and information
@@ -32,6 +32,8 @@ export default function Footer() {
 function Column({ col }) {
   // a single column that appears in the footer
 
+  const { scrollIntoView } = usePageContent();
+
   return (
     <div className="col text-black">
       <h3 className="h3">{col && col.title}</h3>
@@ -39,7 +41,12 @@ function Column({ col }) {
       {col && col.links && (
         <nav>
           <ul className="list">
-            {col.links.map(link => <li key={link.href}><Link to={link.href} className="a text-green">{link.title}</Link></li>)}
+            {col.links.map(link => (
+              <li key={link.href}>
+                {/* when a footer link is clicked, the section corresponding to the footer link is scrolled into view */}
+                <Link to={link.href} className="a text-green" onClick={() => scrollIntoView(link.href)}>{link.title}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
       )}

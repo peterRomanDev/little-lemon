@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom';
 // style
 import './InfoCard.css';
 
+// hooks
+import usePageContent from '../hooks/usePageContent';
+
 export default function InfoCard({ infoCard }) {
     // a reusable card that can display a main title, a subtitle, paragraphs, links/button and an image
     // everything is set up in a way that every element renders or not, without an error, elements can be toggled in the context
+
+    const { scrollIntoView } = usePageContent();
 
   return (
     <div className="info-card">
@@ -28,7 +33,10 @@ export default function InfoCard({ infoCard }) {
                 {/* if links/buttons are set to show, they are rendered */}
                 {infoCard && infoCard.links.isShown && (
                     <div className="btns">
-                        {infoCard.links.list.map(link => <Link className="btn" key={link.title} to={link.href}>{link.title}</Link>)}
+                        {infoCard.links.list.map(link => (
+                            // when a link in the info card is clicked, the section corresponding to the link is scrolled into view
+                            <Link className="btn" key={link.title} to={link.href} onClick={() => scrollIntoView(link.href)}>{link.title}</Link>
+                        ))}
                     </div>
                 )}
             </div>

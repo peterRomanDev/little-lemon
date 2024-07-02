@@ -5,23 +5,23 @@ import Footer from "../components/Footer";
 import InfoCard from "../components/InfoCard";
 import Section from "../components/Section";
 
-// context
-import { usePageContent } from "../hooks/usePageContent";
-import useScrollToSection from "../hooks/useScrollTo";
+// hooks
+import usePageContent from "../hooks/usePageContent";
+import useScroll from "../hooks/useScroll";
 
 export default function ConfirmedBooking() {
   // a booking confirmation page
-  
+
   const { sections, infoCards } = usePageContent();
 
   // scroll to top when loaded
-  useScrollToSection();
-  
+  useScroll();
+
   return (
     <>
       <Header />
       <Main>
-        <Section section={sections.bookingConfirmed}>
+        <Section section={sections && sections.bookingConfirmed}>
           <InfoCard infoCard={infoCards && infoCards.bookingConfirmed} />
         </Section>
       </Main>

@@ -1,8 +1,8 @@
-// hooks
-import { useState } from 'react';
-
 // style
 import './BookingForm.css';
+
+// hooks
+import { useState } from 'react';
 
 export default function BookingForm({ availableTimes, dispatch, submitForm }) {
     // the booking form with the following fields: date, time, amount of guests, occasion

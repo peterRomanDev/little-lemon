@@ -1,22 +1,36 @@
-// style
-import './App.css';
-
-// React Router
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-
 // pages
 import HomePage from './pages/HomePage';
 import BookingPage from './pages/BookingPage';
 import ConfirmedBooking from './pages/ConfirmedBooking';
+import NotFoundPage from './pages/NotFoundPage';
 
-// hooks
-import { usePageContent } from './hooks/usePageContent';
-import { useState } from 'react';
+// style
+import './App.css';
+
+// React Router
+// import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />,
+    errorElement: <NotFoundPage />
+  },
+  {
+    path: '/booking',
+    element: <BookingPage />,
+  },
+  {
+    path: '/booking-confirmed',
+    element: <ConfirmedBooking />
+  },
+]);
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route
             path="/"
@@ -31,7 +45,8 @@ function App() {
             element={<ConfirmedBooking />}
           />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <RouterProvider router={router} />
     </div>
   );
 }

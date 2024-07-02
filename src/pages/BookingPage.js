@@ -7,10 +7,10 @@ import InfoCard from "../components/InfoCard";
 import BookingForm from "../components/BookingForm";
 
 // hooks
-import { usePageContent } from '../hooks/usePageContent';
-import useScrollToSection from "../hooks/useScrollTo";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
+import usePageContent from '../hooks/usePageContent';
+import useScroll from "../hooks/useScroll";
 
 const today = new Date();
 
@@ -92,13 +92,13 @@ export default function BookingPage() {
     const [state, dispatch] = useReducer(availableTimes, initializeTimes(today));
 
     // scroll to top when loaded
-    useScrollToSection();
+    useScroll();
 
     return (
         <>
             <Header />
             <Main>
-                <Section section={sections.heroReservationPage}>
+                <Section section={sections && sections.heroReservationPage}>
                     <InfoCard infoCard={infoCards && infoCards.heroReservationPage} />
                 </Section>
                 <Section>

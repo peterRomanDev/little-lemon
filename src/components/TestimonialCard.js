@@ -1,12 +1,12 @@
+// components
+import Btn from './Btn';
+
 // style
 import './TestimonialCard.css';
 
 // hooks
 import { useState } from 'react';
-import { usePageContent } from '../hooks/usePageContent';
-
-// components
-import Btn from './Btn';
+import usePageContent from '../hooks/usePageContent';
 
 export default function TestimonialCard() {
   // a testimonial card with info about the author, the review and buttons to cycle through the testimonials
