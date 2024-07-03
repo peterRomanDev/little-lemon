@@ -103,7 +103,7 @@ export default function BookingPage() {
                     <InfoCard infoCard={infoCards && infoCards.heroReservationPage} />
                 </Section>
                 <Section>
-                    <BookingForm availableTimes={state} dispatch={dispatch} submitForm={submitForm} />
+                    <BookingForm availableTimes={state} dispatchTimes={dispatch} submitForm={submitForm} />
                 </Section>
             </Main>
             <Footer />
