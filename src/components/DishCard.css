@@ -20,6 +20,12 @@
     height: 500px;
     padding: var(--space-1rem);
     border-radius: var(--br-small);
+    transition: 
+        transform 100ms;
+}
+
+.dish-card:hover {
+transform: scale(1.025);
 }
 
 .dish-card .img-frame {

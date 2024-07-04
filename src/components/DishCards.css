@@ -1,6 +1,6 @@
 /* style */
 .dish-cards {
-    padding: 0 var(--space-10rem);
+    padding: var(--space-1rem) var(--space-10rem);
 }
 
 /* layout */
