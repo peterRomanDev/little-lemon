@@ -5,7 +5,7 @@
 * [Description](#description)
 * [How To Use The Application](#how-to-use-the-application)
 * [Technologies Used](#technologies-used)
-* [Bugs and known issues](#tasks)
+* [Bugs and known issues](#bugs-and-known-issues)
 * [Feedback](#feedback)
 * [Author](#author)
 
