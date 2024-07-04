@@ -45,8 +45,10 @@ export default function BookingForm({ availableTimes, dispatchTimes, submitForm 
         // reacting to when an input field is blurred
 
         const { name: input, value } = e.target;
+        const validNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
         const noValue = value === '';
-        const invalidNumber = value < 1 || value > 10;
+        const invalidNumber = !validNumbers.includes(parseInt(value));
 
         switch (input) {
             case 'date':
@@ -73,9 +75,11 @@ export default function BookingForm({ availableTimes, dispatchTimes, submitForm 
         // reacting to when the value of an input field changes
 
         const { name: input, value } = e.target;
+        const validNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
         const noValue = '';
         const invalidType = isNaN(parseInt(value));
-        const invalidNumber = value < 1 || value > 10;
+        const invalidNumber = !validNumbers.includes(parseInt(value));
 
         setFormData(prev => ({ ...prev, [input]: value }));
 
