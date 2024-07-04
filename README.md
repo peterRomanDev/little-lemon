@@ -35,8 +35,8 @@ This website was made with:
 
 ### Client-side validation
 
-- [] make the "Number of guests" input field not accept decimal numbers
-- [] make the "Number of guests" input field not accept number make of more than 2 digits
+- [ ] make the "Number of guests" input field not accept decimal numbers
+- [ ] make the "Number of guests" input field not accept number make of more than 2 digits
 
 ## Feedback
 
