@@ -2,8 +2,8 @@
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
-import InfoCard from "../components/InfoCard";
 import Section from "../components/Section";
+import InfoCard from "../components/InfoCard";
 
 // hooks
 import { useEffect } from "react";

@@ -43,6 +43,10 @@
     border-radius: var(--br-pill);
 }
 
+.footer .img {
+    width: 10rem;
+}
+
 .footer .list {
     list-style: none;
 }

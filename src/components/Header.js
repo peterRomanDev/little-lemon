@@ -65,7 +65,8 @@ export default function Header() {
 
         if (
           // if the defined visible part of the section with the id of 'home' appears on screen
-          section.target.id === 'home' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart
+          (section.target.id === 'home' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart) ||
+          (section.target.id === 'credits' && section.isIntersecting && section.intersectionRect.height >= visibleSectionPart)
         ) {
           // highlight nav-link 'Home', remove highlighting from the remaining nav-links
           linksMenu.forEach(link => link.classList.remove('a-active'));

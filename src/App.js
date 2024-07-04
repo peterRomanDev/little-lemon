@@ -1,5 +1,6 @@
 // pages
 import HomePage from './pages/HomePage';
+import CreditsPage from './pages/CreditsPage';
 import BookingPage from './pages/BookingPage';
 import ConfirmedBooking from './pages/ConfirmedBooking';
 import NotFoundPage from './pages/NotFoundPage';
@@ -32,6 +33,10 @@ function App() {
       // if the booking is confirmed (after filling out the booking form correctly and submitting it), it is possible to access the ConfirmedBooking page
       element: isBookingConfirmed ? <ConfirmedBooking /> : <Navigate to="/" />
     },
+    {
+      path: '/credits',
+      element: <CreditsPage />,
+    }
   ]);
 
   return (

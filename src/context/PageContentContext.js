@@ -46,7 +46,20 @@ const imgs = {
     // Little Lemon logo
     logo1: {
       src: logo1,
-      alt: 'Little Lemon logo'
+      alt: 'Little Lemon logo',
+      credit: {
+        img: {
+          url: ''
+        },
+        author: {
+          name: 'Peter Roman',
+          url: ''
+        },
+        source: {
+          name: '',
+          url: ''
+        }
+      }
     }
   },
   dishes: {
@@ -54,32 +67,110 @@ const imgs = {
     greekSalad: {
       // Greek Salad
       src: imgGreekSalad,
-      alt: 'Greek Salad'
+      alt: 'Greek Salad',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/sliced-tomato-and-cucumber-on-white-ceramic-plate-JXcgx_U7eh4'
+        },
+        author: {
+          name: 'Loes Klinker',
+          url: 'https://unsplash.com/@loeees_'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     moussaka: {
       // Moussaka
       src: imgMoussaka,
-      alt: 'Moussaka'
+      alt: 'Moussaka',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/baked-pie-bkXzABDt08Q'
+        },
+        author: {
+          name: 'Danil Aksenov',
+          url: 'https://unsplash.com/@nebe3etogo'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     pizzaMargherita: {
       // Pizza Margherita
       src: imgPizzaMargherita,
-      alt: 'Pizza Margherita'
+      alt: 'Pizza Margherita',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/pizza-with-green-leaf-vegetable-JspLKUauwSI'
+        },
+        author: {
+          name: 'Inna Gurina',
+          url: 'https://unsplash.com/@innagurina'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     spaghettiCarbonara: {
       // Spaghetti Carbonara
       src: imgSpaghettiCarbonara,
-      alt: 'Spaghetti Carbonara'
+      alt: 'Spaghetti Carbonara',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/pasta-dish-on-white-ceramic-plate--5FECW242og'
+        },
+        author: {
+          name: 'Zoran Borojevic',
+          url: 'https://unsplash.com/@fresh_studio'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     veggieCousCous: {
       // Veggie Cous Cous
       src: imgVeggieCousCous,
-      alt: 'Veggie cous cous'
+      alt: 'Veggie cous cous',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/a-blue-bowl-filled-with-food-on-top-of-a-wooden-table-lGQvuvGlp0s'
+        },
+        author: {
+          name: 'Sandie Clarke',
+          url: 'https://unsplash.com/@honeypoppet'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     crepeWithNutella: {
       // Crepe with Nutella
       src: imgCrepeWithNutella,
-      alt: 'Crepe with nutella'
+      alt: 'Crepe with nutella',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/chocolate-syrup-on-baked-pastry--ssI7gyHDfk'
+        },
+        author: {
+          name: 'Todd Cravens',
+          url: 'https://unsplash.com/@toddcravens'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
   },
   other: {
@@ -87,22 +178,74 @@ const imgs = {
     chefs: {
       // picture of the two chefs in their early days
       src: imgChefs,
-      alt: 'Adrian and Francesco, the chefs of the Little Lemon restaurant'
+      alt: 'Chefs Adrian and Francesco',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/man-in-white-crew-neck-t-shirt-standing-in-front-of-kitchen-sink-qm6yxe7SjWg'
+        },
+        author: {
+          name: 'Dan Rooney',
+          url: 'https://unsplash.com/@danliamrooney'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     johnSmith: {
       // John Smith - author of a testimonial
       src: imgJohnSmith,
-      alt: 'John Smith'
+      alt: 'John Smith',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/mens-blue-and-white-button-up-collared-top-DItYlc26zVI'
+        },
+        author: {
+          name: 'Christian Buehner',
+          url: 'https://unsplash.com/@christianbuehner'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     wojakMleczko: {
       // Wojak Mleczko - author of a testimonial
       src: imgWojakMleczko,
-      alt: 'Wojak Mleczko'
+      alt: 'Wojak Mleczko',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/man-crossing-both-arms-KIPqvvTOC1s'
+        },
+        author: {
+          name: 'Jonas Kakaroto',
+          url: 'https://unsplash.com/@jkakaroto'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     },
     janePeterson: {
       // Jane Peterson - author of a testimonial
       src: imgJanePeterson,
-      alt: 'Jane Peterson'
+      alt: 'Jane Peterson',
+      credit: {
+        img: {
+          url: 'https://unsplash.com/photos/woman-in-white-crew-neck-shirt-smiling-IF9TK5Uy-KI'
+        },
+        author: {
+          name: 'Jake Nackos',
+          url: 'https://unsplash.com/@jakenackos'
+        },
+        source: {
+          name: 'Unsplash',
+          url: 'https://unsplash.com'
+        }
+      }
     }
   }
 };
@@ -254,8 +397,70 @@ const links = {
     title: 'Reserve a table',
     href: '/booking',
     className: 'reservation'
+  },
+  credits: {
+    // /booking
+    title: 'Credits',
+    href: '/credits',
+    className: 'credits'
   }
 };
+
+// credits
+const credits = [
+  {
+    img: { name: imgs.dishes.greekSalad.alt, url: imgs.dishes.greekSalad.credit.img.url },
+    author: { name: imgs.dishes.greekSalad.credit.author.name, url: imgs.dishes.greekSalad.credit.author.url },
+    source: { name: imgs.dishes.greekSalad.credit.source.name, url: imgs.dishes.greekSalad.credit.source.url }
+  },
+  {
+    img: { name: imgs.dishes.moussaka.alt, url: imgs.dishes.moussaka.credit.img.url },
+    author: { name: imgs.dishes.moussaka.credit.author.name, url: imgs.dishes.moussaka.credit.author.url },
+    source: { name: imgs.dishes.moussaka.credit.source.name, url: imgs.dishes.moussaka.credit.source.url }
+  },
+  {
+    img: { name: imgs.dishes.pizzaMargherita.alt, url: imgs.dishes.pizzaMargherita.credit.img.url },
+    author: { name: imgs.dishes.pizzaMargherita.credit.author.name, url: imgs.dishes.pizzaMargherita.credit.author.url },
+    source: { name: imgs.dishes.pizzaMargherita.credit.source.name, url: imgs.dishes.pizzaMargherita.credit.source.url }
+  },
+  {
+    img: { name: imgs.dishes.spaghettiCarbonara.alt, url: imgs.dishes.spaghettiCarbonara.credit.img.url },
+    author: { name: imgs.dishes.spaghettiCarbonara.credit.author.name, url: imgs.dishes.spaghettiCarbonara.credit.author.url },
+    source: { name: imgs.dishes.spaghettiCarbonara.credit.source.name, url: imgs.dishes.spaghettiCarbonara.credit.source.url }
+  },
+  {
+    img: { name: imgs.dishes.veggieCousCous.alt, url: imgs.dishes.veggieCousCous.credit.img.url },
+    author: { name: imgs.dishes.veggieCousCous.credit.author.name, url: imgs.dishes.veggieCousCous.credit.author.url },
+    source: { name: imgs.dishes.veggieCousCous.credit.source.name, url: imgs.dishes.veggieCousCous.credit.source.url }
+  },
+  {
+    img: { name: imgs.dishes.crepeWithNutella.alt, url: imgs.dishes.crepeWithNutella.credit.img.url },
+    author: { name: imgs.dishes.crepeWithNutella.credit.author.name, url: imgs.dishes.crepeWithNutella.credit.author.url },
+    source: { name: imgs.dishes.crepeWithNutella.credit.source.name, url: imgs.dishes.crepeWithNutella.credit.source.url }
+  },
+  {
+    img: { name: imgs.other.chefs.alt, url: imgs.other.chefs.credit.img.url },
+    author: { name: imgs.other.chefs.credit.author.name, url: imgs.other.chefs.credit.author.url },
+    source: { name: imgs.other.chefs.credit.source.name, url: imgs.other.chefs.credit.source.url }
+  },
+  {
+    img: { name: imgs.other.johnSmith.alt, url: imgs.other.johnSmith.credit.img.url },
+    author: { name: imgs.other.johnSmith.credit.author.name, url: imgs.other.johnSmith.credit.author.url },
+    source: { name: imgs.other.johnSmith.credit.source.name, url: imgs.other.johnSmith.credit.source.url }
+  },
+  {
+    img: { name: imgs.other.wojakMleczko.alt, url: imgs.other.wojakMleczko.credit.img.url },
+    author: { name: imgs.other.wojakMleczko.credit.author.name, url: imgs.other.wojakMleczko.credit.author.url },
+    source: { name: imgs.other.wojakMleczko.credit.source.name, url: imgs.other.wojakMleczko.credit.source.url }
+  },
+  {
+    img: { name: imgs.other.janePeterson.alt, url: imgs.other.janePeterson.credit.img.url },
+    author: { name: imgs.other.janePeterson.credit.author.name, url: imgs.other.janePeterson.credit.author.url },
+    source: { name: imgs.other.janePeterson.credit.source.name, url: imgs.other.janePeterson.credit.source.url }
+  },
+];
+
+// const creditsList = credits.map(credit => <p key={credit.author.name}>Photo of "<Link to={credit.img.url}>{credit.img.name}</Link>" by <Link to={credit.author.url}>{credit.author.name}</Link> from <Link to={credit.source.url}>{credit.source.name}</Link></p>);
 
 // sections
 const sections = {
@@ -334,6 +539,15 @@ const sections = {
   notFound: {
     // booking confirmed page
     id: 'not-found',
+    h2: {
+      isShown: false,
+      text: '',
+      color: colors.black
+    }
+  },
+  credits: {
+    // credits page
+    id: 'credits',
     h2: {
       isShown: false,
       text: '',
@@ -539,7 +753,7 @@ const infoCards = {
         h1: {
             isShown: true,
             text: '404 Not Found',
-            color: ''
+            color: colors.yellow
         },
         h2: {
             isShown: false,
@@ -562,6 +776,39 @@ const infoCards = {
       list: [
         { title: btns.backToHomepage.text, href: links.home.href },
       ]
+    }
+  },
+  credits: {
+    // card confirming that a table has been successfully booked
+    card: {
+      bgColor: colors.green
+    },
+    hs: {
+        isShown: true,
+        h1: {
+            isShown: true,
+            text: 'Credits',
+            color: colors.yellow
+        },
+        h2: {
+            isShown: true,
+            text: '',
+            color: ''
+        }
+    },
+    ps: {
+      isShown: true,
+      list: [],
+      color: colors.white
+    },
+    img: {
+      isShown: false,
+      src: '',
+      alt: ''
+    },
+    links: {
+      isShown: false,
+      list: []
     }
   },
 };
@@ -594,7 +841,8 @@ const footerDets = {
       links: [
         { title: links.menu.title, href: links.menu.href },
         { title: links.about.title, href: links.about.href },
-        { title: links.booking.title, href: links.booking.href }
+        { title: links.booking.title, href: links.booking.href },
+        { title: links.credits.title, href: links.credits.href }
       ]
     },
     {
@@ -609,7 +857,7 @@ const footerDets = {
       ps: [
         { text: contactInfo.address },
       ]
-    }
+    },
   ]
 };
 
@@ -631,6 +879,14 @@ const scrollIntoView = href => {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  if (href === '/credits') {
+    const section = document.querySelector('#credits');
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 };
 
 export function PageContentProvider({ children }) {
@@ -638,7 +894,7 @@ export function PageContentProvider({ children }) {
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
 
   return (
-    <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, headerDets, footerDets, scrollIntoView, isBookingConfirmed, setIsBookingConfirmed }}>
+    <PageContentContext.Provider value={{ contactInfo, colors, imgs, btns, dishes, testimonials, links, sections, infoCards, headerDets, footerDets, scrollIntoView, isBookingConfirmed, setIsBookingConfirmed, credits }}>
       {children}
     </PageContentContext.Provider>
   );

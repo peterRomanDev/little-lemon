@@ -11,7 +11,7 @@ export default function InfoCard({ infoCard }) {
     // a reusable card that can display a main title, a subtitle, paragraphs, links/button and an image
     // everything is set up in a way that every element renders or not, without an error, elements can be toggled in the context
 
-    const { scrollIntoView } = usePageContent();
+    const { scrollIntoView, credits } = usePageContent();
 
   return (
     <div className="info-card">
@@ -37,6 +37,12 @@ export default function InfoCard({ infoCard }) {
                             // when a link in the info card is clicked, the section corresponding to the link is scrolled into view
                             <Link className="btn" key={link.title} to={link.href} onClick={() => scrollIntoView(link.href)}>{link.title}</Link>
                         ))}
+                    </div>
+                )}
+                {/* if the heading of the info card is 'Credits', the credits will be rendered in the info card */}
+                {credits && infoCard && infoCard.hs.h1.text === 'Credits' && (
+                    <div className="ps section-lg">
+                        {credits.map(credit => <p key={credit.author.name} className={`p-credits text-${infoCard.ps.color}`}>Photo of "<Link to={credit.img.url} className="a text-yellow">{credit.img.name}</Link>" by <Link to={credit.author.url} className="a text-yellow">{credit.author.name}</Link> from <Link to={credit.source.url} className="a text-yellow">{credit.source.name}</Link></p>)}
                     </div>
                 )}
             </div>

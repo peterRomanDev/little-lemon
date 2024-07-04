@@ -20,7 +20,7 @@ export default function useScroll() {
       }
     }
 
-    if (pathname === '/booking' || pathname === '/booking-confirmed') {
+    if (pathname === '/booking' || pathname === '/booking-confirmed' || pathname === '/credits') {
       // when the pathname changes
       // scroll the newly loaded page to the top
       window.scrollTo(0, 0);
