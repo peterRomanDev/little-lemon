@@ -28,11 +28,6 @@
     color: var(--color-white);
 }
 
-.nav-large-screen .a:focus {
-    outline: 0;
-    box-shadow: var(--box-shadow-focus);
-}
-
 .nav-large-screen .a:active {
     color: var(--color-yellow);
 }

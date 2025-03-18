@@ -17,11 +17,6 @@
     transition: box-shadow 100ms;
 }
 
-.header .logo:focus {
-    outline: 0;
-    box-shadow: var(--box-shadow-focus);
-}
-
 .header .img {
     width: 10rem;
 }

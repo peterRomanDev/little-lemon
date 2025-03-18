@@ -43,11 +43,6 @@
     color: var(--color-white);
 }
 
-.info-card .a:focus {
-    outline: 0;
-    box-shadow: var(--box-shadow-focus);
-}
-
 /* sizes */
 .info-card .card {
     padding: var(--space-3rem) var(--space-1rem);

@@ -31,12 +31,6 @@
     transition: box-shadow 100ms;
 }
 
-.booking-form .input:focus,
-.booking-form .select:focus,
-.booking-form .option:focus {
-    box-shadow: var(--box-shadow-focus);
-}
-
 .booking-form .form {
     width: 3000px;
 }

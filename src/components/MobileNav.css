@@ -29,11 +29,6 @@
     cursor: pointer;
 }
 
-.mobile-nav .btn-menu-icon:focus {
-    outline: 0;
-    box-shadow: var(--box-shadow-focus);
-}
-
 .mobile-nav .btn-menu-icon:active {
     color: var(--color-yellow);
 }

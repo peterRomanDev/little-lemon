@@ -28,11 +28,6 @@
     cursor: pointer;
 }
 
-.btn:focus {
-    outline: 0;
-    box-shadow: var(--box-shadow-focus);
-}
-
 .btn:active {
     color: var(--color-yellow);
 }

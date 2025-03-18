@@ -23,11 +23,6 @@
     color: var(--color-white);
 }
 
-.footer .a:focus {
-    outline: 0;
-    box-shadow: var(--box-shadow-focus);
-}
-
 /* style */
 .footer {
     padding: var(--space-4rem) 0;
