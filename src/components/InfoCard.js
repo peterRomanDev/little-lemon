@@ -42,7 +42,26 @@ export default function InfoCard({ infoCard }) {
                 {/* if the heading of the info card is 'Credits', the credits will be rendered in the info card */}
                 {credits && infoCard && infoCard.hs.h1.text === 'Credits' && (
                     <div className="ps section-lg">
-                        {credits.map(credit => <p key={credit.author.name} className={`p-credits text-${infoCard.ps.color}`}>Photo of "<Link to={credit.img.url} className="a text-yellow">{credit.img.name}</Link>" by <Link to={credit.author.url} className="a text-yellow">{credit.author.name}</Link> from <Link to={credit.source.url} className="a text-yellow">{credit.source.name}</Link></p>)}
+                        {credits.map(credit => (
+							<p
+								key={credit.author.name}
+								className={`p-credits text-${infoCard.ps.color}`}
+							>
+								{credit.img.url && credit.img.name && (
+									<>
+										Photo of "<Link to={credit.img.url} className="a text-yellow">{credit.img.name}</Link>"
+										{" "}
+										{credit.author.url && credit.author.name && (
+											<>
+												by <Link to={credit.author.url} className="a text-yellow">{credit.author.name}</Link>
+											</>
+										)}
+										{" "}
+										from <Link to={credit.source.url} className="a text-yellow">{credit.source.name}</Link>
+									</>
+								)}
+							</p>
+						))}
                     </div>
                 )}
             </div>

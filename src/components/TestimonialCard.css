@@ -98,16 +98,6 @@
     transform: translateX(-50%);
 }
 
-.testimonial-card .img-john-smith {
-    /* adjusting the position of the John Smith image */
-    transform: translate(-60%);
-}
-
-.testimonial-card .img-jane-peterson {
-    /* adjusting the position of the Jane Peterson image */
-    transform: scale(1.3) translate(-38%, 5%);
-}
-
 .testimonial-card .btns-sm {
     /* making certain buttons appear on small screens */
     display: flex;

@@ -199,15 +199,15 @@ const imgs = {
       alt: 'John Smith',
       credit: {
         img: {
-          url: 'https://unsplash.com/photos/mens-blue-and-white-button-up-collared-top-DItYlc26zVI'
+          url: 'https://www.thispersondoesnotexist.com'
         },
         author: {
-          name: 'Christian Buehner',
-          url: 'https://unsplash.com/@christianbuehner'
+          name: '',
+          url: ''
         },
         source: {
-          name: 'Unsplash',
-          url: 'https://unsplash.com'
+          name: 'thispersondoesnotexist.com',
+          url: 'https://www.thispersondoesnotexist.com'
         }
       }
     },
@@ -217,15 +217,15 @@ const imgs = {
       alt: 'Wojak Mleczko',
       credit: {
         img: {
-          url: 'https://unsplash.com/photos/man-crossing-both-arms-KIPqvvTOC1s'
+          url: 'https://www.thispersondoesnotexist.com'
         },
         author: {
-          name: 'Jonas Kakaroto',
-          url: 'https://unsplash.com/@jkakaroto'
+          name: '',
+          url: ''
         },
         source: {
-          name: 'Unsplash',
-          url: 'https://unsplash.com'
+          name: 'thispersondoesnotexist.com',
+          url: 'https://www.thispersondoesnotexist.com'
         }
       }
     },
@@ -235,15 +235,15 @@ const imgs = {
       alt: 'Jane Peterson',
       credit: {
         img: {
-          url: 'https://unsplash.com/photos/woman-in-white-crew-neck-shirt-smiling-IF9TK5Uy-KI'
+          url: 'https://www.thispersondoesnotexist.com'
         },
         author: {
-          name: 'Jake Nackos',
-          url: 'https://unsplash.com/@jakenackos'
+          name: '',
+          url: ''
         },
         source: {
-          name: 'Unsplash',
-          url: 'https://unsplash.com'
+          name: 'thispersondoesnotexist.com',
+          url: 'https://www.thispersondoesnotexist.com'
         }
       }
     }
