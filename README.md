@@ -11,25 +11,26 @@
 
 ## Description
 
-This is a website for a fictional restaurant Little Lemon. You can read see the restaurant's menu, read about it, and reserve a table.
+This is a website for a fictional restaurant Little Lemon. You can see the restaurant's menu, read about its history, read testimonials, and reserve a table.
 
 ## How To Use The Application
 
-In order to use the application, simply run "npm run start". You will land on the home page of the restaurant.
+In order to use the application, visit `https://littlelemon.peterroman.codes`. You will land on the home page of the restaurant.
 
 * "Home" navigates to the home page
 * "Menu" navigates to the restaurant's menu
 * "About" nagivates to a the restaurant's description
-* "Reserve a table" navigates to the table booking form
+* "Reserve a Table" navigates to the table booking form
 
 ## Technologies Used
 
 This website was made with:
 * React
-* React Router
+* React Router DOM
 * CSS
 * Figma
 * Jest
+* Vercel
 
 ## Bugs and known issues
 
